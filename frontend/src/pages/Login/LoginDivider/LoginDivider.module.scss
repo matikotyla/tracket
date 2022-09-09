@@ -1,0 +1,19 @@
+.root {
+  @apply mt-6 relative;
+}
+
+.content {
+  @apply absolute inset-0 flex items-center;
+}
+
+.line {
+  @apply w-full border-t border-gray-300;
+}
+
+.box {
+  @apply relative flex justify-center text-sm;
+}
+
+.text {
+  @apply px-2 bg-white text-gray-500;
+}

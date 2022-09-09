@@ -1,0 +1,30 @@
+@use "styles/mixins" as *;
+
+.root {
+  @include page;
+}
+
+.container {
+  @apply min-h-screen flex;
+}
+
+.left {
+  @apply flex-1 flex flex-col justify-center;
+}
+
+.right {
+  @apply hidden xl:flex flex-col justify-center flex-1;
+}
+
+.content {
+  // @apply mx-auto w-full max-w-md;
+  @apply mx-auto w-full space-y-8 max-w-lg;
+}
+
+.box {
+  @apply mx-auto w-full max-w-2xl p-4;
+}
+
+.image {
+  @apply w-full h-auto;
+}

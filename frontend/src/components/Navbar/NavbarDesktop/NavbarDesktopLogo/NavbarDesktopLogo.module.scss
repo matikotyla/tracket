@@ -1,0 +1,11 @@
+.logo {
+  @apply flex items-center space-x-4;
+}
+
+.icon {
+  @apply h-8 w-auto;
+}
+
+.text {
+  @apply text-2xl leading-8 font-semibold;
+}

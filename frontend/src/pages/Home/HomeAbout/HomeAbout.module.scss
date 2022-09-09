@@ -1,0 +1,43 @@
+.root {
+  @apply mx-auto;
+}
+
+.container {
+  @apply lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-8;
+}
+
+.first {
+  @apply mx-auto lg:col-start-2 lg:col-span-1 lg:flex lg:items-center;
+}
+
+.second {
+  @apply mt-12 relative sm:max-w-xl sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-1 lg:col-span-1 lg:flex lg:justify-center lg:items-center;
+}
+
+.box {
+  @apply h-12 w-12 rounded-md flex items-center justify-center bg-teal-600;
+}
+
+.icon {
+  @apply h-6 w-6 text-white;
+}
+
+.title {
+  @apply mt-6 text-3xl font-extrabold tracking-tight text-gray-900;
+}
+
+.text {
+  @apply mt-4 text-lg text-gray-500;
+}
+
+.link {
+  @apply mt-6 inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-teal-600 hover:bg-teal-700;
+}
+
+.image {
+  @apply relative mx-auto w-full lg:max-w-xl;
+
+  svg {
+    @apply w-full h-auto;
+  }
+}

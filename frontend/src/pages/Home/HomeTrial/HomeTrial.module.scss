@@ -1,0 +1,38 @@
+.root {
+}
+
+.container {
+  @apply mx-auto lg:flex lg:items-center lg:justify-between;
+}
+
+.title {
+  @apply text-3xl font-extrabold tracking-tight sm:text-4xl;
+
+  span {
+    @apply block;
+  }
+
+  span:nth-child(1) {
+    @apply text-gray-900;
+  }
+
+  span:nth-child(2) {
+    @apply text-teal-600;
+  }
+}
+
+.buttons {
+  @apply mt-8 flex lg:mt-0 lg:flex-shrink-0 space-x-3;
+}
+
+.button {
+  @apply inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md shadow;
+
+  &Primary {
+    @apply text-white bg-teal-600 hover:bg-teal-700;
+  }
+
+  &Secondary {
+    @apply text-teal-600 bg-white hover:bg-teal-50;
+  }
+}

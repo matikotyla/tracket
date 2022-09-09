@@ -1,0 +1,15 @@
+node_modules
+build
+dist
+npm-debug.log
+.env
+.serverless
+.eslintcache
+.npm
+.webpack
+logs
+stack.json
+*.log
+local
+documentation/scripts/*.json
+.DS_Store
