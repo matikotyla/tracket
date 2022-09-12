@@ -1,13 +1,8 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import { Navbar, Footer } from "components";
 import { About, Contact, Home, Login, Pricing, Register } from "pages";
-import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const location = useLocation();
