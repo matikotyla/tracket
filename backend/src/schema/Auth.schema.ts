@@ -18,7 +18,6 @@ namespace AuthSchema {
     email: AuthRule.Register.Email,
     firstName: AuthRule.Register.FirstName,
     lastName: AuthRule.Register.LastName,
-    name: AuthRule.Register.Name,
     password: AuthRule.Register.Password,
   });
 }

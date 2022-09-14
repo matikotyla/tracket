@@ -50,15 +50,15 @@ namespace AuthMutation {
     type: nonNull("User"),
     args: {
       email: nonNull(stringArg()),
-      name: nonNull(stringArg()),
       firstName: nonNull(stringArg()),
       lastName: nonNull(stringArg()),
       password: nonNull(stringArg()),
     },
     async resolve(source, args, context, info) {
-      const { email, name, firstName, lastName, password } = args;
+      const { email, firstName, lastName, password } = args;
 
       const { error } = AuthValidation.validateRegisterUser(args);
+      console.log(error);
       if (error) {
         throw new UserInputError("Object is invalid");
       }
@@ -75,7 +75,7 @@ namespace AuthMutation {
       return await context.prisma.user.create({
         data: {
           email,
-          name,
+          name: "",
           firstName,
           lastName,
           password: hashPassword,

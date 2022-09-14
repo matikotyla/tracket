@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  .Toastify {
+    &__toast {
+      @apply shadow-lg ring-1 ring-black ring-opacity-5 cursor-default p-0;
+
+      &-body {
+        @apply p-0;
+      }
+    }
+  }
+
+  --toastify-toast-width: 370px;
+}

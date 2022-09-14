@@ -16,8 +16,8 @@ namespace AuthRule {
         tlds: { allow: false },
       })
       .required();
-    export const FirstName = Joi.string().min(3).max(64).alphanum().required();
-    export const LastName = Joi.string().min(3).max(64).alphanum().required();
+    export const FirstName = Joi.string().min(3).max(32).alphanum().required();
+    export const LastName = Joi.string().min(3).max(32).alphanum().required();
     export const Name = Joi.string().min(3).max(32).alphanum().required();
     export const Password = Joi.string().min(8).max(32).required();
   }

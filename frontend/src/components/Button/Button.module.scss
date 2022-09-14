@@ -23,11 +23,15 @@
 }
 
 .primary {
-  @apply shadow-sm text-white bg-teal-600 hover:bg-teal-700 focus:outline-none;
+  @apply shadow-sm text-white bg-teal-600 hover:bg-teal-700;
 }
 
 .secondary {
-  @apply text-teal-700 bg-teal-100 hover:bg-teal-200 focus:outline-none;
+  @apply text-teal-700 bg-teal-100 hover:bg-teal-200;
+}
+
+.root:disabled {
+  @apply cursor-not-allowed text-white bg-gray-300;
 }
 
 // .success {
@@ -48,4 +52,7 @@
 
 .full {
   @apply w-full;
+}
+
+.disabled {
 }

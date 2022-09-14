@@ -1,7 +1,7 @@
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
 
-import LoginData from "data/Login.data";
+import { LoginData } from "data";
 
 import styles from "./LoginSocial.module.scss";
 

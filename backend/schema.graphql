@@ -15,7 +15,7 @@ type Mutation {
   deleteProject(id: String!): Project!
   deleteTask(id: String!): Task!
   loginUser(email: String!, password: String!): Payload!
-  registerUser(email: String!, firstName: String!, lastName: String!, name: String!, password: String!): User!
+  registerUser(email: String!, firstName: String!, lastName: String!, password: String!): User!
   updateProject(color: Color, id: String!, name: String): Project!
   updateTask(completed: Boolean, content: String, description: String, id: String!): Task!
 }

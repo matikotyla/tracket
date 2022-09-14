@@ -3,6 +3,8 @@ import { clsx } from "clsx";
 
 import { ButtonProps } from "./Button.props";
 
+import ButtonSpin from "./ButtonSpin/ButtonSpin";
+
 import styles from "./Button.module.scss";
 
 const Button: FunctionComponent<ButtonProps> = ({
@@ -18,12 +20,14 @@ const Button: FunctionComponent<ButtonProps> = ({
   return (
     <button
       // type={type}
+      disabled={disabled}
       className={clsx(styles.root, styles[size], styles[variant], {
         [styles.full]: fullWidth,
       })}
       onClick={onClick}
       data-testid="button"
     >
+      {loading && <ButtonSpin />}
       {text}
     </button>
   );

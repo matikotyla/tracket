@@ -179,7 +179,6 @@ export interface NexusGenArgTypes {
       email: string; // String!
       firstName: string; // String!
       lastName: string; // String!
-      name: string; // String!
       password: string; // String!
     }
     updateProject: { // args
