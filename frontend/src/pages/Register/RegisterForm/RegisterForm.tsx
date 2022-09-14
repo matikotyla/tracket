@@ -1,28 +1,21 @@
-import {
-  ChangeEvent,
-  ChangeEventHandler,
-  FormEventHandler,
-  FunctionComponent,
-  useEffect,
-  useState,
-} from "react";
+import { ChangeEvent, ChangeEventHandler, FunctionComponent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 import { joiResolver } from "@hookform/resolvers/joi";
+import { Controller, useForm } from "react-hook-form";
 
+import { AuthTypes } from "types";
+import { AuthSchema } from "schema";
+import { AuthMutation } from "mutation";
+import { NotificationUtils } from "utils";
 import { Button, Checkbox, Input } from "components";
 
 import styles from "./RegisterForm.module.scss";
-import { ApolloError, gql, useMutation } from "@apollo/client";
-import { AuthMutation } from "mutation";
-import { NotificationUtils } from "utils";
-import { Controller, useForm } from "react-hook-form";
-import { AuthTypes } from "types";
-import { AuthSchema } from "schema";
 
 const RegisterForm: FunctionComponent = () => {
   const navigate = useNavigate();
 
-  const [registerUser, { loading, data, error, reset }] = useMutation<
+  const [registerUser, { loading, error, reset }] = useMutation<
     AuthTypes.Register.Response,
     AuthTypes.Register.Request
   >(AuthMutation.RegisterUser);
