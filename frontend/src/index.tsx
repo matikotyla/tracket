@@ -6,6 +6,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import App from "./App";
 
 import "./index.scss";
+import { AuthProvider } from "context";
 
 const client = new ApolloClient({
   uri: "http://localhost:4000/",
@@ -19,7 +20,9 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <Router>
-        <App />
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </Router>
     </ApolloProvider>
   </React.StrictMode>

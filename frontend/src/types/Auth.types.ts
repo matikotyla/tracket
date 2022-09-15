@@ -1,5 +1,19 @@
 namespace AuthTypes {
-  export namespace Login {}
+  export namespace Login {
+    export interface Form {
+      email: string;
+      password: string;
+    }
+
+    export interface Request {
+      email: string;
+      password: string;
+    }
+
+    export interface Response {
+      token: string;
+    }
+  }
 
   export namespace Register {
     export interface Form {
@@ -24,6 +38,17 @@ namespace AuthTypes {
       firstName: string;
       lastName: string;
       password: string;
+    }
+  }
+
+  export namespace State {
+    export interface Context {
+      authenticated: boolean;
+    }
+
+    export interface Hook extends Context {
+      signIn: () => void;
+      signOut: () => void;
     }
   }
 }

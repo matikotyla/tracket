@@ -5,7 +5,18 @@ import AuthMessages from "messages/Auth.messages";
 const JoiPassword: JoiPasswordExtend = Joi.extend(joiPasswordExtendCore);
 
 namespace AuthRules {
-  export namespace Login {}
+  export namespace Login {
+    export const Email = Joi.string()
+      .email({
+        tlds: { allow: false },
+      })
+      .required()
+      .messages(AuthMessages.Login.Email);
+
+    export const Passowrd = Joi.string()
+      .required()
+      .messages(AuthMessages.Login.Password);
+  }
 
   export namespace Register {
     export const Email = Joi.string()

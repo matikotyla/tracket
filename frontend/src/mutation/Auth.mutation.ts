@@ -1,6 +1,14 @@
 import { gql } from "@apollo/client";
 
 namespace AuthMutation {
+  export const LoginUser = gql`
+    mutation Mutation($email: String!, $password: String!) {
+      loginUser(email: $email, password: $password) {
+        token
+      }
+    }
+  `;
+
   export const RegisterUser = gql`
     mutation Mutation(
       $email: String!

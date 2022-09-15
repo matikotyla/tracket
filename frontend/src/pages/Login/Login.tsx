@@ -1,15 +1,16 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useContext } from "react";
 
 import LoginHeader from "./LoginHeader/LoginHeader";
 import LoginSocial from "./LoginSocial/LoginSocial";
 import LoginDivider from "./LoginDivider/LoginDivider";
 import LoginForm from "./LoginForm/LoginForm";
 
+import { useAuth } from "hooks";
+import { withAnimation } from "hoc";
+import { CommonAnimations } from "animations";
 import { LoginImage } from "assets/images";
 
 import styles from "./Login.module.scss";
-import { withAnimation } from "hoc";
-import { CommonAnimations } from "animations";
 
 const Login: FunctionComponent = () => {
   return (

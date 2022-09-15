@@ -3,7 +3,15 @@ import { AnimatePresence } from "framer-motion";
 import { Flip, ToastContainer } from "react-toastify";
 
 import { Navbar, Footer } from "components";
-import { About, Contact, Home, Login, Pricing, Register } from "pages";
+import {
+  About,
+  Contact,
+  Dashboard,
+  Home,
+  Login,
+  Pricing,
+  Register,
+} from "pages";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -40,6 +48,7 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="pricing" element={<Pricing />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="dashboard" element={<Dashboard />} />
         </Routes>
       </AnimatePresence>
     </div>

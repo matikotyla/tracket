@@ -2,7 +2,17 @@ import { SchemaTypes } from "types";
 
 namespace AuthMessages {
   export namespace Login {
-    export const Email: SchemaTypes.Message = {};
+    export const Email: SchemaTypes.Message = {
+      "string.base": "Email should be a type of text",
+      "string.empty": "Email is not allowed to be empty",
+      "string.email": "Email is not a valid email",
+      "any.required": "Email is a required field",
+    };
+    export const Password: SchemaTypes.Message = {
+      "string.base": "Password should be a type of text",
+      "string.empty": "Password is not allowed to be empty",
+      "any.required": "Password is a required field",
+    };
   }
 
   export namespace Register {
