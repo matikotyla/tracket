@@ -7,3 +7,4 @@ export { type default as NotificationTypes } from "./Notification.types";
 export { type default as SchemaTypes } from "./Schema.types";
 export { type default as AuthTypes } from "./Auth.types";
 export { type default as ContextTypes } from "./Context.types";
+export { type default as UserTypes } from "./User.types";

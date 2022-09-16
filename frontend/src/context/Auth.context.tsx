@@ -1,7 +1,25 @@
+import { useAuth, useUser } from "hooks";
+import { useGetUser } from "hooks";
+import { FunctionComponent, PropsWithChildren, useEffect } from "react";
 import { AuthTypes } from "types";
-import { ContextUtils } from "utils";
+import { AuthUtils, ContextUtils } from "utils";
 
 export const [AuthContext, AuthProvider] =
   ContextUtils.initializeContext<AuthTypes.State.Context>({
-    authenticated: false,
+    authenticated: AuthUtils.isToken(),
   });
+
+export const AuthListener: FunctionComponent = () => {
+  const { authenticated } = useAuth();
+  const {
+    getUser: [get],
+  } = useUser();
+
+  useEffect(() => {
+    if (authenticated) {
+      get();
+    }
+  }, [authenticated]);
+
+  return null;
+};

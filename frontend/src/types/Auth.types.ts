@@ -11,7 +11,9 @@ namespace AuthTypes {
     }
 
     export interface Response {
-      token: string;
+      loginUser: {
+        token: string;
+      };
     }
   }
 
@@ -47,7 +49,7 @@ namespace AuthTypes {
     }
 
     export interface Hook extends Context {
-      signIn: () => void;
+      signIn: (token: string) => void;
       signOut: () => void;
     }
   }

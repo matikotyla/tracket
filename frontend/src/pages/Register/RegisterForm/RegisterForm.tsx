@@ -7,7 +7,7 @@ import { Controller, useForm } from "react-hook-form";
 import { AuthTypes } from "types";
 import { AuthSchema } from "schema";
 import { AuthMutation } from "mutation";
-import { NotificationUtils } from "utils";
+import { ErrorUtils, NotificationUtils } from "utils";
 import { Button, Checkbox, Input } from "components";
 
 import styles from "./RegisterForm.module.scss";
@@ -171,7 +171,7 @@ const RegisterForm: FunctionComponent = () => {
           type="submit"
           text="Sign up"
           loading={loading}
-          disabled={loading}
+          disabled={loading || !!error || !ErrorUtils.isErrorsEmpty(errors)}
           fullWidth
         />
       </div>
