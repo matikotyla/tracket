@@ -1,6 +1,5 @@
 import { useLazyQuery, useQuery, useReactiveVar } from "@apollo/client";
 import { Loader } from "components";
-import { UserLoading } from "context";
 import { useAuth, useUser } from "hooks";
 import useGetUser from "hooks/useGetUser";
 import { Dashboard } from "pages";
@@ -12,14 +11,13 @@ import { UserTypes } from "types";
 import { NotificationUtils } from "utils";
 
 const AppContainer = () => {
-  // const { loading } = useUser();
-  const loading = useReactiveVar(UserLoading);
+  const { loading } = useUser();
 
-  useEffect(() => {
-    console.log(loading);
-  }, [loading]);
+  useEffect(() => console.log(loading), [loading]);
 
   return loading ? <Loader /> : <Outlet />;
+
+  // return <Outlet />;
 
   // return (
   //   <>

@@ -11,13 +11,11 @@ export const [AuthContext, AuthProvider] =
 
 export const AuthListener: FunctionComponent = () => {
   const { authenticated } = useAuth();
-  const {
-    getUser: [get],
-  } = useUser();
+  const { getUser } = useUser();
 
   useEffect(() => {
     if (authenticated) {
-      get();
+      getUser();
     }
   }, [authenticated]);
 

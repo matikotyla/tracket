@@ -25,6 +25,11 @@ namespace UserTypes {
       loading: boolean;
     }
 
+    export interface Variable {
+      user: User | null;
+      loading: boolean;
+    }
+
     export interface Hook extends Context {
       setUser: (user: UserTypes.User) => void;
       removeUser: () => void;
