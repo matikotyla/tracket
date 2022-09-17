@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Flip, ToastContainer } from "react-toastify";
 
-import { Navbar, Footer } from "components";
+import { Navbar, Footer, Sidebar } from "components";
 import {
   About,
   Contact,
@@ -37,33 +37,35 @@ const App = () => {
         transition={Flip}
       />
       <AuthListener />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route element={<PublicRoute to="/app" />}>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <Footer />
-                </>
-              }
-            />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="about" element={<About />} />
-            <Route path="pricing" element={<Pricing />} />
-            <Route path="contact" element={<Contact />} />
-          </Route>
-          <Route element={<PrivateRoute to="/login" />}>
-            <Route path="app" element={<AppContainer />}>
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="team" element={<Team />} />
-              <Route index element={<Navigate to="dashboard" />} />
+      <Sidebar>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route element={<PublicRoute to="/app" />}>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Home />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="about" element={<About />} />
+              <Route path="pricing" element={<Pricing />} />
+              <Route path="contact" element={<Contact />} />
             </Route>
-          </Route>
-        </Routes>
-      </AnimatePresence>
+            <Route element={<PrivateRoute to="/login" />}>
+              <Route path="app" element={<AppContainer />}>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="team" element={<Team />} />
+                <Route index element={<Navigate to="dashboard" />} />
+              </Route>
+            </Route>
+          </Routes>
+        </AnimatePresence>
+      </Sidebar>
     </div>
   );
 };

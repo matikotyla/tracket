@@ -15,13 +15,7 @@ const AppContainer = () => {
 
   useEffect(() => console.log(loading), [loading]);
 
-  return loading ? (
-    <Loader />
-  ) : (
-    <Sidebar>
-      <Outlet />
-    </Sidebar>
-  );
+  return loading ? <Loader /> : <Outlet />;
 
   // return <Outlet />;
 
