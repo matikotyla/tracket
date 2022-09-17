@@ -4,7 +4,7 @@ import React from "react";
 
 const Dashboard = () => {
   const { authenticated, signOut } = useAuth();
-  const { user } = useUser();
+  const { user, counter } = useUser();
 
   return (
     <Sidebar>
@@ -17,6 +17,7 @@ const Dashboard = () => {
             <h2>Hi {user?.firstName}</h2>
             <h3>{authenticated ? "yes" : "no"}</h3>
             {/* Replace with your content */}
+            <h4>{counter}</h4>
             <div className="py-4">
               <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
             </div>
