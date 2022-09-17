@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { ExclamationCircleIcon } from "@heroicons/react/solid";
+import { ExclamationCircleIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 
 import { InputProps } from "./Input.props";

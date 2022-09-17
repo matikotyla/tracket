@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { CheckIcon } from "@heroicons/react/solid";
+import { CheckIcon } from "@heroicons/react/24/solid";
 
 import { PricingTierProps } from "./PricingTier.props";
 

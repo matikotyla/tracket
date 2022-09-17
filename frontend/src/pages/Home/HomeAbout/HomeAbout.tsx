@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Link } from "react-router-dom";
-import { SparklesIcon } from "@heroicons/react/outline";
+import { SparklesIcon } from "@heroicons/react/24/outline";
 
 import { SearchImage } from "assets/images";
 

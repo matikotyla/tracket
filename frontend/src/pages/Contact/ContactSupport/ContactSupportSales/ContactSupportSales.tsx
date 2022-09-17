@@ -1,5 +1,5 @@
 import React from "react";
-import { InboxIcon, PhoneIcon } from "@heroicons/react/outline";
+import { InboxIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 import styles from "./ContactSupportSales.module.scss";
 

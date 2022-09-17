@@ -7,6 +7,17 @@ namespace UserTypes {
     lastName: string;
   }
 
+  export interface State {
+    user: User | null;
+    loading: boolean;
+  }
+
+  export interface Hook extends State {
+    setUser: (user: UserTypes.User | null) => void;
+    removeUser: () => void;
+    getUser: () => void;
+  }
+
   export namespace Get {
     export interface Response {
       user: {
@@ -16,24 +27,6 @@ namespace UserTypes {
         firstName: string;
         lastName: string;
       };
-    }
-  }
-
-  export namespace State {
-    export interface Context {
-      user: User | null;
-      loading: boolean;
-    }
-
-    export interface Variable {
-      user: User | null;
-      loading: boolean;
-    }
-
-    export interface Hook extends Context {
-      setUser: (user: UserTypes.User) => void;
-      removeUser: () => void;
-      getUser: () => void;
     }
   }
 }

@@ -1,0 +1,7 @@
+.root {
+  @apply rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2;
+}
+
+.icon {
+  @apply h-6 w-6;
+}

@@ -11,6 +11,7 @@ import {
   Login,
   Pricing,
   Register,
+  Team,
 } from "pages";
 import { PrivateRoute, PublicRoute } from "routes";
 import { AppContainer } from "container";
@@ -57,6 +58,7 @@ const App = () => {
           <Route element={<PrivateRoute to="/login" />}>
             <Route path="app" element={<AppContainer />}>
               <Route path="dashboard" element={<Dashboard />} />
+              <Route path="team" element={<Team />} />
               <Route index element={<Navigate to="dashboard" />} />
             </Route>
           </Route>

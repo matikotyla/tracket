@@ -1,5 +1,5 @@
 import { useLazyQuery, useQuery, useReactiveVar } from "@apollo/client";
-import { Loader } from "components";
+import { Loader, Sidebar } from "components";
 import { useAuth, useUser } from "hooks";
 import useGetUser from "hooks/useGetUser";
 import { Dashboard } from "pages";
@@ -15,7 +15,13 @@ const AppContainer = () => {
 
   useEffect(() => console.log(loading), [loading]);
 
-  return loading ? <Loader /> : <Outlet />;
+  return loading ? (
+    <Loader />
+  ) : (
+    <Sidebar>
+      <Outlet />
+    </Sidebar>
+  );
 
   // return <Outlet />;
 

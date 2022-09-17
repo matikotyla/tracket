@@ -6,22 +6,20 @@ import { NotificationUtils } from "utils";
 import { UserVariables } from "variables";
 import useVar from "./useVar";
 
-const useUser = () => {
-  // const user = useReactiveVar(UserVariables.user);
-  const [loading] = useVar(UserVariables.loading);
+const useUser = (): UserTypes.Hook => {
+  const [state, setState] = useVar<UserTypes.State>(UserVariables.state);
 
-  const [user, setUser] = useVar(UserVariables.user);
-  const [counter, setCounter] = useVar(UserVariables.counter);
-
-  // const setUser = (user: UserTypes.User) => UserVariables.user(user);
-  const removeUser = () => UserVariables.user(null);
-  const setLoading = (loading: boolean) => UserVariables.loading(loading);
+  const setUser = (user: UserTypes.User | null) =>
+    setState((state) => ({ ...state, user }));
+  const removeUser = () => setUser(null);
+  const setLoading = (loading: boolean) =>
+    setState((state) => ({ ...state, loading }));
 
   const [getUser, { loading: getUserLoading }] =
     useLazyQuery<UserTypes.Get.Response>(UserQuery.Get, {
       fetchPolicy: "network-only",
       onCompleted: (data) => {
-        setUser(() => data.user);
+        setUser(data.user);
       },
       onError: () =>
         NotificationUtils.notify(
@@ -32,20 +30,21 @@ const useUser = () => {
     });
 
   useEffect(() => {
-    if (!getUserLoading) {
-      setTimeout(() => setLoading(getUserLoading), 3000);
+    const isLoading = getUserLoading;
+
+    if (!isLoading) {
+      setTimeout(() => setLoading(isLoading), 3000);
     } else {
-      setLoading(getUserLoading);
+      setLoading(isLoading);
     }
   }, [getUserLoading]);
 
   return {
-    user,
-    loading,
+    user: state.user,
+    loading: state.loading,
     setUser,
     removeUser,
     getUser,
-    counter,
   };
 };
 

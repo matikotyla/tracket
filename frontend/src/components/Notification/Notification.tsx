@@ -1,5 +1,5 @@
 import { FunctionComponent, useMemo } from "react";
-import { XIcon } from "@heroicons/react/solid";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 
 import { NotificationProps } from "./Notification.props";
 
@@ -28,7 +28,7 @@ const Notification: FunctionComponent<NotificationProps> = ({
         <div className={styles.action}>
           <button type="button" className={styles.button} onClick={onClose}>
             <span className="sr-only">Close</span>
-            <XIcon className={styles.close} aria-hidden="true" />
+            <XMarkIcon className={styles.close} aria-hidden="true" />
           </button>
         </div>
       </div>

@@ -1,0 +1,19 @@
+.root {
+  @apply sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow;
+}
+
+.openButton {
+  @apply border-r border-gray-200 px-4 text-gray-500 focus:outline-none md:hidden;
+}
+
+.openIcon {
+  @apply h-6 w-6;
+}
+
+.container {
+  @apply flex flex-1 justify-end px-4;
+}
+
+.content {
+  @apply flex items-center;
+}

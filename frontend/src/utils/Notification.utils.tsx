@@ -6,7 +6,7 @@ import {
   ExclamationCircleIcon,
   InformationCircleIcon,
   XCircleIcon,
-} from "@heroicons/react/outline";
+} from "@heroicons/react/24/outline";
 
 namespace NotificationUtils {
   export const notify = (

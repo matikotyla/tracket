@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: "Inter";
+}
+
 :root {
   .Toastify {
     &__toast {
