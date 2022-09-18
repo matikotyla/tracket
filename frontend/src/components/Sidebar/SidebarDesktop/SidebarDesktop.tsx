@@ -1,10 +1,7 @@
 import { FunctionComponent } from "react";
-import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import clsx from "clsx";
-
-import { AnimationData, SidebarData } from "data";
+import { AnimationData } from "data";
 
 import SidebarDesktopLogo from "./SidebarDesktopLogo/SidebarDesktopLogo";
 
@@ -12,6 +9,7 @@ import styles from "./SidebarDesktop.module.scss";
 import { SidebarDesktopProps } from "./SidebarDesktop.props";
 import { AnimatePresence } from "framer-motion";
 import { CommonAnimations } from "animations";
+import SidebarList from "../SidebarList/SidebarList";
 
 const SidebarDesktop: FunctionComponent<SidebarDesktopProps> = ({ show }) => {
   return (
@@ -26,23 +24,7 @@ const SidebarDesktop: FunctionComponent<SidebarDesktopProps> = ({ show }) => {
           <div className={styles.container}>
             <SidebarDesktopLogo />
             <div className={styles.content}>
-              <nav className={styles.list}>
-                {SidebarData.links.map((item) => (
-                  <NavLink
-                    key={item.name}
-                    to={item.to}
-                    className={({ isActive }) =>
-                      clsx(
-                        styles.item,
-                        isActive ? styles.itemActive : styles.itemInactive
-                      )
-                    }
-                  >
-                    <item.icon className={styles.itemIcon} aria-hidden="true" />
-                    {item.name}
-                  </NavLink>
-                ))}
-              </nav>
+              <SidebarList />
             </div>
           </div>
         </motion.div>

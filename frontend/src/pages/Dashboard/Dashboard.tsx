@@ -1,9 +1,55 @@
-import { Sidebar } from "components";
+import {
+  Table,
+  TableBody,
+  TableData,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "components";
 import { useAuth, useUser } from "hooks";
-import { PaperClipIcon } from "@heroicons/react/20/solid";
 import { withAnimation } from "hoc";
 import { CommonAnimations } from "animations";
 import { FunctionComponent } from "react";
+
+const people = [
+  {
+    name: "Lindsay Walton",
+    title: "Front-end Developer",
+    email: "lindsay.walton@example.com",
+    role: "Member",
+  },
+  {
+    name: "Courtney Henry",
+    title: "Designer",
+    email: "courtney.henry@example.com",
+    role: "Admin",
+  },
+  {
+    name: "Tom Cook",
+    title: "Director, Product Development",
+    email: "tom.cook@example.com",
+    role: "Member",
+  },
+  {
+    name: "Whitney Francis",
+    title: "Copywriter",
+    email: "whitney.francis@example.com",
+    role: "Admin",
+  },
+  {
+    name: "Leonard Krasner",
+    title: "Senior Designer",
+    email: "leonard.krasner@example.com",
+    role: "Owner",
+  },
+  {
+    name: "Floyd Miles",
+    title: "Principal Designer",
+    email: "floy.dmiles@example.com",
+    role: "Member",
+  },
+  // More people...
+];
 
 const Dashboard: FunctionComponent = () => {
   const { authenticated, signOut } = useAuth();
@@ -11,124 +57,87 @@ const Dashboard: FunctionComponent = () => {
 
   return (
     <main className="flex-1">
-      <div className="py-6">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
-        </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-          {/* Replace with your content */}
-          <div>
-            <div>
-              <h3 className="text-lg font-medium leading-6 text-gray-900">
-                Applicant Information
-              </h3>
-              <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                Hi {user?.firstName} Personal details and application.
-              </p>
-            </div>
-            <div className="mt-5 border-t border-gray-200">
-              <dl className="sm:divide-y sm:divide-gray-200">
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Full name
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    Margot Foster
-                  </dd>
-                </div>
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Application for
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    Backend Developer
-                  </dd>
-                </div>
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Email address
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    margotfoster@example.com
-                  </dd>
-                </div>
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Salary expectation
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    $120,000
-                  </dd>
-                </div>
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">About</dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
-                    incididunt cillum culpa consequat. Excepteur qui ipsum
-                    aliquip consequat sint. Sit id mollit nulla mollit nostrud
-                    in ea officia proident. Irure nostrud pariatur mollit ad
-                    adipisicing reprehenderit deserunt qui eu.
-                  </dd>
-                </div>
-                <div className="py-4 sm:grid sm:grid-cols-3 sm:gap-4 sm:py-5">
-                  <dt className="text-sm font-medium text-gray-500">
-                    Attachments
-                  </dt>
-                  <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                    <ul
-                      role="list"
-                      className="divide-y divide-gray-200 rounded-md border border-gray-200"
-                    >
-                      <li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
-                        <div className="flex w-0 flex-1 items-center">
-                          <PaperClipIcon
-                            className="h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-2 w-0 flex-1 truncate">
-                            resume_back_end_developer.pdf
-                          </span>
-                        </div>
-                        <div className="ml-4 flex-shrink-0">
-                          <a
-                            href="#"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                          >
-                            Download
-                          </a>
-                        </div>
-                      </li>
-                      <li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
-                        <div className="flex w-0 flex-1 items-center">
-                          <PaperClipIcon
-                            className="h-5 w-5 flex-shrink-0 text-gray-400"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-2 w-0 flex-1 truncate">
-                            coverletter_back_end_developer.pdf
-                          </span>
-                        </div>
-                        <div className="ml-4 flex-shrink-0">
-                          <a
-                            href="#"
-                            className="font-medium text-indigo-600 hover:text-indigo-500"
-                          >
-                            Download
-                          </a>
-                        </div>
-                      </li>
-                    </ul>
-                  </dd>
-                </div>
-              </dl>
-            </div>
+      <div className="pb-4">
+        <div className="sm:flex sm:items-center">
+          <div className="sm:flex-auto">
+            <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+            <p className="mt-2 text-sm text-gray-700">
+              A list of all the users in your account including their name,
+              title, email and role.
+            </p>
           </div>
-          <div className="py-4">
-            <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
+          <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:w-auto"
+            >
+              Add user
+            </button>
           </div>
-          <button onClick={signOut}>Logout</button>
-          {/* /End replace */}
         </div>
+        <div className="mt-4">
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableHeader>
+                  <p className="pl-1 sm:pl-3 text-xs font-medium uppercase tracking-wide text-gray-500">
+                    Name
+                  </p>
+                </TableHeader>
+                <TableHeader>
+                  <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                    Title
+                  </p>
+                </TableHeader>
+                <TableHeader>
+                  <p className="text-left text-xs font-medium uppercase tracking-wide text-gray-500">
+                    Email
+                  </p>
+                </TableHeader>
+                <TableHeader>
+                  <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                    Role
+                  </p>
+                </TableHeader>
+                <th scope="col" className="py-3 pl-3 pr-4 sm:pr-6"></th>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {people.map((person) => (
+                <TableRow key={person.email}>
+                  <TableData>
+                    <p className="pl-1 sm:pl-3 text-sm font-medium text-gray-900">
+                      {person.name}
+                    </p>
+                  </TableData>
+                  <TableData>
+                    <p className="text-sm text-gray-500">{person.title}</p>
+                  </TableData>
+                  <TableData>
+                    <p className="text-sm text-gray-500">{person.email}</p>
+                  </TableData>
+                  <TableData>
+                    <p className="text-sm text-gray-500">{person.role}</p>
+                  </TableData>
+                  <TableData align="right">
+                    {/* <p className="inline-flex text-sm text-gray-500">
+                        {person.role}
+                      </p> */}
+                    {/* <a
+                        href="#"
+                        className="pr-1 sm:pr-3 text-indigo-600 hover:text-indigo-900 text-sm font-medium"
+                      >
+                        Edit
+                      </a> */}
+                  </TableData>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+      <div className="py-4">
+        <div className="h-96 rounded-lg border-4 border-dashed border-gray-200" />
       </div>
     </main>
   );

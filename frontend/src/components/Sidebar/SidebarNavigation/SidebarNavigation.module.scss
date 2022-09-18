@@ -1,5 +1,5 @@
 .root {
-  @apply sticky top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow;
+  @apply fixed w-full md:pl-64 left-0 top-0 z-10 flex h-16 flex-shrink-0 bg-white shadow;
 }
 
 .openButton {

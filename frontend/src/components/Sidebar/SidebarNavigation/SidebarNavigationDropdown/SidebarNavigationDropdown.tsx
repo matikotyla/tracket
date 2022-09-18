@@ -5,11 +5,12 @@ import { SidebarAnimations } from "animations";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { SidebarData } from "data";
-import { useUser } from "hooks";
+import { useAuth, useUser } from "hooks";
 
 import styles from "./SidebarNavigationDropdown.module.scss";
 
 const SidebarNavigationDropdown = () => {
+  const { signOut } = useAuth();
   const { user } = useUser();
 
   return (
@@ -33,6 +34,11 @@ const SidebarNavigationDropdown = () => {
               </Link>
             </Menu.Item>
           ))}
+          <Menu.Item>
+            <button className={styles.item} onClick={signOut}>
+              Sign out
+            </button>
+          </Menu.Item>
         </Menu.Items>
       </Transition>
     </Menu>

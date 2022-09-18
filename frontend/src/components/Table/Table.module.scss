@@ -1,0 +1,19 @@
+.root {
+  @apply flex flex-col;
+}
+
+.container {
+  @apply -my-2 -mx-4 overflow-x-auto sm:-mx-6 lg:-mx-8;
+}
+
+.content {
+  @apply inline-block min-w-full py-2 align-middle px-4 md:px-6 lg:px-8;
+}
+
+.box {
+  @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg;
+}
+
+.table {
+  @apply min-w-full divide-y divide-gray-300;
+}

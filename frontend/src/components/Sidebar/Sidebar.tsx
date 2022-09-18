@@ -13,7 +13,7 @@ const Sidebar: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <div>
       <SidebarMobile open={sidebarOpen} onClick={setSidebarOpen} />
       <SidebarDesktop show={authenticated} />
-      <div className="flex flex-1 flex-col md:pl-64">
+      <div className="flex flex-1 flex-col">
         <SidebarNavigation show={authenticated} onClick={setSidebarOpen} />
         {children}
       </div>

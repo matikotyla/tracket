@@ -6,3 +6,4 @@ export { default as LoginData } from "./Login.data";
 export { default as AnimationData } from "./Animation.data";
 export { default as AuthData } from "./Auth.data";
 export { default as SidebarData } from "./Sidebar.data";
+export { default as TableData } from "./Table.data";

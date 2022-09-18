@@ -1,29 +1,21 @@
-import { useLazyQuery, useQuery, useReactiveVar } from "@apollo/client";
-import { Loader, Sidebar } from "components";
-import { useAuth, useUser } from "hooks";
-import useGetUser from "hooks/useGetUser";
-import { Dashboard } from "pages";
-import { UserQuery } from "query";
-import { FunctionComponent, useEffect, useState } from "react";
-import { Outlet, Route } from "react-router-dom";
-import { PrivateRoute } from "routes";
-import { UserTypes } from "types";
-import { NotificationUtils } from "utils";
+import { FunctionComponent, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
-const AppContainer = () => {
+import { Loader } from "components";
+import { useUser } from "hooks";
+
+const AppContainer: FunctionComponent = () => {
   const { loading } = useUser();
 
-  useEffect(() => console.log(loading), [loading]);
-
-  return loading ? <Loader /> : <Outlet />;
-
-  // return <Outlet />;
-
-  // return (
-  //   <>
-  //     <Outlet />
-  //   </>
-  // );
+  return loading ? (
+    <Loader />
+  ) : (
+    <div className="pt-16 md:pl-64">
+      <div className="py-6 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        <Outlet />
+      </div>
+    </div>
+  );
 };
 
 export default AppContainer;

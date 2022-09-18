@@ -1,9 +1,9 @@
 .root {
-  @apply hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col;
+  @apply hidden md:fixed z-20 md:inset-y-0 md:flex md:w-64 md:flex-col;
 }
 
 .container {
-  @apply flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5;
+  @apply flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4;
 }
 
 .content {
@@ -11,7 +11,7 @@
 }
 
 .list {
-  @apply flex-1 space-y-1 px-2 pb-4;
+  @apply flex-1 space-y-8 bg-white px-2;
 }
 
 .item {

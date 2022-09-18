@@ -1,0 +1,15 @@
+.root {
+  @apply whitespace-nowrap px-3 py-4;
+}
+
+.left {
+  @apply text-left;
+}
+
+.center {
+  @apply text-center;
+}
+
+.right {
+  @apply text-right;
+}
