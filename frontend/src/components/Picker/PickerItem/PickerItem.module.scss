@@ -1,0 +1,51 @@
+@use "styles/mixins" as *;
+
+.root {
+  @apply relative cursor-default select-none py-2 pl-3 pr-9;
+}
+
+.active {
+  @apply text-white bg-teal-600;
+}
+
+.inactive {
+  @apply text-gray-900;
+}
+
+.content {
+  @apply flex items-center;
+}
+
+.dot {
+  @apply inline-block h-2 w-2 flex-shrink-0 rounded-full;
+
+  @include colors(400);
+}
+
+.text {
+  @apply ml-3 block truncate first-letter:capitalize;
+}
+
+.selected {
+  @apply font-semibold;
+}
+
+.unselected {
+  @apply font-normal;
+}
+
+.mark {
+  @apply absolute inset-y-0 right-0 flex items-center pr-4;
+}
+
+.checked {
+  @apply text-white;
+}
+
+.unchecked {
+  @apply text-teal-600;
+}
+
+.icon {
+  @apply h-5 w-5;
+}

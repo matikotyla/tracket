@@ -1,19 +1,18 @@
 import { FunctionComponent } from "react";
 
 import { SidebarData } from "data";
+import { useLayout, useProject } from "hooks";
 
 import SidebarListItem from "./SidebarListItem/SidebarListItem";
 import SidebarListProject from "./SidebarListProject/SidebarListProject";
 
 import styles from "./SidebarList.module.scss";
-
-const teams = [
-  { name: "Engineering", to: "#", bgColorClass: "bg-indigo-500" },
-  { name: "Human Resources", to: "#", bgColorClass: "bg-green-500" },
-  { name: "Customer Success", to: "#", bgColorClass: "bg-yellow-500" },
-];
+import { ModalTypes, ProjectTypes } from "types";
 
 const SidebarList: FunctionComponent = () => {
+  const { projects } = useProject();
+  const { openModal } = useLayout();
+
   return (
     <nav className={styles.root}>
       <div className="space-y-1">
@@ -38,12 +37,23 @@ const SidebarList: FunctionComponent = () => {
           role="group"
           aria-labelledby="mobile-teams-headline"
         >
-          {teams.map((team) => (
+          {projects.map((project) => (
             <SidebarListProject
-              key={team.name}
-              to={team.to}
-              name={team.name}
-              color={team.bgColorClass}
+              key={project.id}
+              name={project.name}
+              color={project.color}
+              onClick={() =>
+                openModal({
+                  type: ModalTypes.Type.EditProject,
+                  data: project,
+                })
+              }
+              onButtonClick={() =>
+                openModal({
+                  type: ModalTypes.Type.RemoveProject,
+                  data: { id: project.id },
+                })
+              }
             />
           ))}
         </div>

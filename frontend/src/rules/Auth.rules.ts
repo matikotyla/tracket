@@ -1,6 +1,6 @@
 import Joi from "joi";
 import { joiPasswordExtendCore, JoiPasswordExtend } from "joi-password";
-import AuthMessages from "messages/Auth.messages";
+import { AuthMessages } from "messages";
 
 const JoiPassword: JoiPasswordExtend = Joi.extend(joiPasswordExtendCore);
 

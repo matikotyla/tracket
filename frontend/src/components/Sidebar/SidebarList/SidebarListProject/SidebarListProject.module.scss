@@ -1,10 +1,27 @@
+@use "styles/mixins" as *;
+
 .root {
-  @apply flex items-center rounded-md px-3 py-2 text-base md:text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+  @apply flex w-full items-center justify-between rounded-md px-3 py-2 text-base md:text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+
+  &:hover {
+    .icon {
+      @apply md:visible;
+    }
+  }
 }
 
 .dot {
+  @include colors(500);
 }
 
 .text {
   @apply truncate;
+}
+
+.icon {
+  @apply md:invisible flex-shrink-0 h-6 w-6 md:h-5 md:w-5 text-gray-400;
+
+  &:hover {
+    @apply text-gray-500;
+  }
 }

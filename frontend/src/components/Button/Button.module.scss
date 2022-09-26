@@ -30,17 +30,17 @@
   @apply text-teal-700 bg-teal-100 hover:bg-teal-200;
 }
 
-.root:disabled {
+.disabled {
   @apply cursor-not-allowed text-white bg-gray-300;
 }
 
-// .success {
-// @apply ;
-// }
+.success {
+  @apply shadow-sm text-white bg-green-600 hover:bg-green-700;
+}
 
-// .error {
-// @apply ;
-// }
+.error {
+  @apply shadow-sm text-white bg-red-600 hover:bg-red-700;
+}
 
 // .info {
 // @apply ;

@@ -1,0 +1,35 @@
+@use "styles/mixins" as *;
+
+.root {
+  @apply relative w-full cursor-default rounded-md border bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:outline-none focus:ring-1 sm:text-sm;
+}
+
+.valid {
+  @apply border-gray-300 focus:ring-teal-500 focus:border-teal-500;
+}
+
+.invalid {
+  @apply border-red-300 text-red-900 focus:ring-red-500 focus:border-red-500;
+}
+
+.content {
+  @apply flex items-center;
+}
+
+.dot {
+  @apply inline-block h-2 w-2 flex-shrink-0 rounded-full;
+
+  @include colors(400);
+}
+
+.text {
+  @apply ml-3 block truncate first-letter:capitalize;
+}
+
+.box {
+  @apply pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2;
+}
+
+.icon {
+  @apply h-5 w-5 text-gray-400;
+}

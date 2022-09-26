@@ -2,7 +2,7 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Flip, ToastContainer } from "react-toastify";
 
-import { Navbar, Footer, Sidebar } from "components";
+import { Navbar, Footer, Sidebar, Modal } from "components";
 import {
   About,
   Contact,
@@ -14,7 +14,7 @@ import {
   Team,
 } from "pages";
 import { PrivateRoute, PublicRoute } from "routes";
-import { AppContainer } from "container";
+import { AppContainer, ModalContainer } from "container";
 
 import "react-toastify/dist/ReactToastify.css";
 import { AuthListener } from "context";
@@ -37,6 +37,7 @@ const App = () => {
         transition={Flip}
       />
       <AuthListener />
+      <ModalContainer />
       <Sidebar>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>

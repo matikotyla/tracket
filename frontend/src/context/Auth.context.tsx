@@ -1,5 +1,4 @@
 import { useAuth, useUser } from "hooks";
-import { useGetUser } from "hooks";
 import { FunctionComponent, PropsWithChildren, useEffect } from "react";
 import { AuthTypes } from "types";
 import { AuthUtils, ContextUtils } from "utils";

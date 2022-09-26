@@ -6,7 +6,8 @@ namespace SchemaTypes {
     | "string.email"
     | "string.min"
     | "string.max"
-    | "string.alphanum";
+    | "string.alphanum"
+    | "string.length";
   export type BooleanType = "boolean.base";
   export type PasswordType =
     | "password.minOfNumeric"

@@ -1,0 +1,17 @@
+@use "styles/mixins" as *;
+
+.root {
+  @apply flex items-center space-x-1;
+}
+
+.icon {
+  @apply w-5 h-5;
+
+  @include textColors(800);
+}
+
+.text {
+  @apply text-sm leading-4 font-medium;
+
+  @include textColors(800);
+}

@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-namespace ProjetQuery {
+namespace ProjectQuery {
   export const Get = gql`
     query Query {
       projects {
@@ -12,4 +12,4 @@ namespace ProjetQuery {
   `;
 }
 
-export default ProjetQuery;
+export default ProjectQuery;

@@ -21,9 +21,14 @@ const Button: FunctionComponent<ButtonProps> = ({
     <button
       // type={type}
       disabled={disabled}
-      className={clsx(styles.root, styles[size], styles[variant], {
-        [styles.full]: fullWidth,
-      })}
+      className={clsx(
+        styles.root,
+        styles[size],
+        !disabled ? styles[variant] : styles.disabled,
+        {
+          [styles.full]: fullWidth,
+        }
+      )}
       onClick={onClick}
       data-testid="button"
     >

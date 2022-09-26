@@ -3,10 +3,23 @@
 
 
 enum Color {
-  Blue
-  Green
-  Red
-  Yellow
+  amber
+  blue
+  cyan
+  emerald
+  fuchsia
+  green
+  indigo
+  lime
+  orange
+  pink
+  purple
+  red
+  rose
+  sky
+  teal
+  violet
+  yellow
 }
 
 type Mutation {

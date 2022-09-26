@@ -2,10 +2,20 @@ import { FunctionComponent, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
 import { Loader } from "components";
-import { useUser } from "hooks";
+import { useProject, useUser } from "hooks";
 
 const AppContainer: FunctionComponent = () => {
-  const { loading } = useUser();
+  const { user, loading } = useUser();
+  const {
+    getProjects: { invoke },
+  } = useProject();
+
+  useEffect(() => {
+    if (user) {
+      // console.log("getting");
+      invoke();
+    }
+  }, [user, invoke]);
 
   return loading ? (
     <Loader />

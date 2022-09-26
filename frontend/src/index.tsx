@@ -5,6 +5,7 @@ import {
   ApolloClient,
   ApolloProvider,
   createHttpLink,
+  gql,
   InMemoryCache,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
@@ -12,7 +13,8 @@ import { setContext } from "@apollo/client/link/context";
 import App from "./App";
 
 import "./index.scss";
-import { AuthProvider, UserProvider } from "context";
+import { AuthProvider, LayoutProvider } from "context";
+import { ApolloCache } from "cache";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:4000/",
@@ -31,7 +33,7 @@ const authLink = setContext((_, { headers }) => {
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: ApolloCache,
 });
 
 const root = ReactDOM.createRoot(
@@ -42,9 +44,9 @@ root.render(
     <ApolloProvider client={client}>
       <Router>
         <AuthProvider>
-          <UserProvider>
+          <LayoutProvider>
             <App />
-          </UserProvider>
+          </LayoutProvider>
         </AuthProvider>
       </Router>
     </ApolloProvider>

@@ -1,11 +1,11 @@
 import { MouseEventHandler } from "react";
 
-import { ButtonSize, ButtonVariant } from "types/Button.types";
+import { ButtonTypes } from "types";
 
 export interface ButtonProps {
   text: string;
-  size?: ButtonSize;
-  variant?: ButtonVariant;
+  size?: ButtonTypes.Size;
+  variant?: ButtonTypes.Variant;
   type?: "submit" | "reset" | "button";
   loading?: boolean;
   disabled?: boolean;

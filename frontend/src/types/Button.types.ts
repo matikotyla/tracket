@@ -1,9 +1,12 @@
-export type ButtonSize = "xs" | "sm" | "md" | "lg" | "xl";
+namespace ButtonTypes {
+  export type Size = "xs" | "sm" | "md" | "lg" | "xl";
+  export type Variant =
+    | "primary"
+    | "secondary"
+    | "success"
+    | "error"
+    | "info"
+    | "warning";
+}
 
-export type ButtonVariant =
-  | "primary"
-  | "secondary"
-  | "success"
-  | "error"
-  | "info"
-  | "warning";
+export default ButtonTypes;

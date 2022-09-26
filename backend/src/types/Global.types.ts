@@ -17,7 +17,7 @@ export interface NexusGenInputs {
 }
 
 export interface NexusGenEnums {
-  Color: "Blue" | "Green" | "Red" | "Yellow"
+  Color: "amber" | "blue" | "cyan" | "emerald" | "fuchsia" | "green" | "indigo" | "lime" | "orange" | "pink" | "purple" | "red" | "rose" | "sky" | "teal" | "violet" | "yellow"
 }
 
 export interface NexusGenScalars {

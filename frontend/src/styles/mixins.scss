@@ -1,3 +1,33 @@
+@use "styles/variables" as *;
+
 @mixin page {
   @apply max-w-4xl lg:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@mixin color($color, $type, $weight) {
+  @apply #{$type}-#{$color}-#{$weight};
+}
+
+@mixin colors($weight) {
+  @each $color in $colors {
+    &-#{$color} {
+      @include color($color, "bg", $weight);
+    }
+  }
+}
+
+@mixin textColors($weight) {
+  @each $color in $colors {
+    &-#{$color} {
+      @include color($color, "text", $weight);
+    }
+  }
+}
+
+@mixin backgroundColors($weight) {
+  @each $color in $colors {
+    &-#{$color} {
+      @include color($color, "bg", $weight);
+    }
+  }
 }
