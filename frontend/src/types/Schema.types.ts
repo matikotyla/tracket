@@ -15,8 +15,14 @@ namespace SchemaTypes {
     | "password.minOfUppercase"
     | "password.minOfLowercase"
     | "password.noWhiteSpaces";
+  export type ObjectType = "object.base";
 
-  export type Type = AnyType | StringType | BooleanType | PasswordType;
+  export type Type =
+    | AnyType
+    | StringType
+    | BooleanType
+    | PasswordType
+    | ObjectType;
 
   export type Message = {
     [_ in Type]?: string;

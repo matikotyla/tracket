@@ -17,7 +17,7 @@ const AppContainer: FunctionComponent = () => {
     }
   }, [user, invoke]);
 
-  return loading ? (
+  return loading || !user ? (
     <Loader />
   ) : (
     <div className="pt-16 md:pl-64">

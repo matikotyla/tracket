@@ -124,7 +124,7 @@ const useProject = (): ProjectTypes.Hook => {
       },
       onError: (error) => {
         NotificationUtils.notify(
-          "Project not upated",
+          "Project not deleted",
           "Something went wrong when deleting a project.",
           "error"
         );

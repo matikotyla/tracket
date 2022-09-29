@@ -16,6 +16,8 @@ const Task: FunctionComponent<TaskProps> = ({
   priority,
   tag,
   color,
+  onUpdateClick,
+  onDeleteClick,
 }) => {
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -42,7 +44,10 @@ const Task: FunctionComponent<TaskProps> = ({
         <TaskTag name={tag} color={color} />
       </TableData>
       <TableData>
-        <TaskActions />
+        <TaskActions
+          onUpdateClick={onUpdateClick}
+          onDeleteClick={onDeleteClick}
+        />
       </TableData>
     </TableRow>
   );

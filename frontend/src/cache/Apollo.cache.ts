@@ -43,6 +43,31 @@ export default new InMemoryCache({
             });
           },
         },
+        createTask: {
+          merge(_, incoming: CacheTypes.Item, { cache }) {
+            cache.modify({
+              fields: {
+                tasks(existing: CacheTypes.Item[] = []) {
+                  return [...existing, incoming];
+                },
+              },
+            });
+            return incoming;
+          },
+        },
+        deleteTask: {
+          merge(_, incoming: CacheTypes.Item, { cache }) {
+            cache.modify({
+              fields: {
+                tasks(existing: CacheTypes.Item[] = []) {
+                  return existing.filter(
+                    (item) => item.__ref !== incoming.__ref
+                  );
+                },
+              },
+            });
+          },
+        },
       },
     },
   },

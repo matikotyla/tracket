@@ -7,4 +7,6 @@ export interface TaskProps {
   priority: string;
   tag: string;
   color: StylesTypes.Color;
+  onUpdateClick: () => void;
+  onDeleteClick: () => void;
 }

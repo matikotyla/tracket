@@ -1,5 +1,4 @@
 import { FunctionComponent } from "react";
-
 import { Listbox } from "@headlessui/react";
 
 import { PickerLabelProps } from "./PickerLabel.props";

@@ -1,15 +1,19 @@
+import { FunctionComponent } from "react";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
-import React from "react";
 
 import styles from "./TaskActions.module.scss";
+import { TaskActionsProps } from "./TaskActions.props";
 
-const TaskActions = () => {
+const TaskActions: FunctionComponent<TaskActionsProps> = ({
+  onUpdateClick,
+  onDeleteClick,
+}) => {
   return (
     <div className={styles.root}>
-      <button>
+      <button onClick={onUpdateClick}>
         <PencilSquareIcon className={styles.icon} />
       </button>
-      <button>
+      <button onClick={onDeleteClick}>
         <TrashIcon className={styles.icon} />
       </button>
     </div>
