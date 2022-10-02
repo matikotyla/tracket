@@ -7,30 +7,30 @@ import {
 import { SettingsTypes } from "types";
 
 namespace SettingsData {
-  export const tabs: SettingsTypes.Tab.Data[] = [
-    {
-      type: SettingsTypes.Tab.Type.Profile,
-      name: "Profile",
-      element: SettingsProfile,
-    },
-    {
-      type: SettingsTypes.Tab.Type.Account,
-      name: "Account",
-      element: SettingsAccount,
-    },
-    {
-      type: SettingsTypes.Tab.Type.Team,
-      name: "Team Members",
-      element: SettingsTeam,
-    },
-    {
-      type: SettingsTypes.Tab.Type.Billing,
-      name: "Billing",
-      element: SettingsBilling,
-    },
-  ];
-
   export namespace Tab {
+    export const tabs: SettingsTypes.Tab.Data[] = [
+      {
+        type: SettingsTypes.Tab.Type.Profile,
+        name: "Profile",
+        element: SettingsProfile,
+      },
+      {
+        type: SettingsTypes.Tab.Type.Account,
+        name: "Account",
+        element: SettingsAccount,
+      },
+      {
+        type: SettingsTypes.Tab.Type.Team,
+        name: "Team Members",
+        element: SettingsTeam,
+      },
+      {
+        type: SettingsTypes.Tab.Type.Billing,
+        name: "Billing",
+        element: SettingsBilling,
+      },
+    ];
+
     export const names: SettingsTypes.Tab.Name = {
       [SettingsTypes.Tab.Type.Profile]: "Profile",
       [SettingsTypes.Tab.Type.Account]: "Account",

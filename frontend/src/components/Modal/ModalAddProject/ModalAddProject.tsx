@@ -1,5 +1,5 @@
 import { Fragment, FunctionComponent } from "react";
-import { Input, Picker } from "components";
+import { Button, Input, Picker } from "components";
 import { Dialog, Transition } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { useLayout, useProject } from "hooks";
@@ -9,6 +9,7 @@ import { Controller, useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { ProjectSchema } from "schema";
 import { StylesData } from "data";
+import { ErrorUtils } from "utils";
 
 const ModalAddProject: FunctionComponent<ModalAddProjectProps> = ({
   type,
@@ -16,7 +17,7 @@ const ModalAddProject: FunctionComponent<ModalAddProjectProps> = ({
   onClose,
 }) => {
   const {
-    create: { invoke },
+    create: { invoke, loading },
   } = useProject();
 
   const {
@@ -86,12 +87,15 @@ const ModalAddProject: FunctionComponent<ModalAddProjectProps> = ({
         </div>
       </div>
       <div className="mt-5 sm:mt-6 sm:grid sm:grid-cols-2 sm:gap-3 sm:grid-flow-row-dense">
-        <button
-          type="submit"
-          className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-teal-600 text-base font-medium text-white hover:bg-teal-700 focus:outline-none sm:col-start-2 sm:text-sm"
-        >
-          Add
-        </button>
+        <div className="sm:col-start-2">
+          <Button
+            variant="primary"
+            text="Add"
+            loading={loading}
+            disabled={loading || !ErrorUtils.isErrorsEmpty(errors)}
+            fullWidth
+          />
+        </div>
         <button
           type="button"
           className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:col-start-1 sm:text-sm"

@@ -8,6 +8,7 @@ import { TaskCheckboxProps } from "./TaskCheckbox.props";
 
 const TaskCheckbox: FunctionComponent<TaskCheckboxProps> = ({
   value,
+  disabled,
   onChange,
 }) => {
   const [animation, setAnimation] = useState<AnimationItem | null>(null);
@@ -45,6 +46,7 @@ const TaskCheckbox: FunctionComponent<TaskCheckboxProps> = ({
     <button
       ref={element}
       className={styles.root}
+      disabled={disabled}
       onClick={() => {
         onChange(!value);
       }}

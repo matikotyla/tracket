@@ -16,8 +16,11 @@ const Task: FunctionComponent<TaskProps> = ({
   priority,
   tag,
   color,
+  value,
+  disabled = false,
   onUpdateClick,
   onDeleteClick,
+  onCheckboxClick,
 }) => {
   const [checked, setChecked] = useState<boolean>(false);
 
@@ -26,7 +29,11 @@ const Task: FunctionComponent<TaskProps> = ({
       <TableData>
         <div className={styles.content}>
           <div>
-            <TaskCheckbox value={checked} onChange={(v) => setChecked(v)} />
+            <TaskCheckbox
+              value={value}
+              disabled={disabled}
+              onChange={onCheckboxClick}
+            />
           </div>
           <div>
             <TaskTitle value={content} />

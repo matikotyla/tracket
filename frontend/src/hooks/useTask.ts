@@ -46,11 +46,11 @@ const useTask = (): TaskTypes.Hook => {
     TaskTypes.Update.Request
   >(TaskMutation.UpdateTask, {
     onCompleted: (data) => {
-      NotificationUtils.notify(
-        "Task updated",
-        "Task has been successfully updated.",
-        "success"
-      );
+      // NotificationUtils.notify(
+      //   "Task updated",
+      //   "Task has been successfully updated.",
+      //   "success"
+      // );
       closeModal();
     },
     onError: (error) => {

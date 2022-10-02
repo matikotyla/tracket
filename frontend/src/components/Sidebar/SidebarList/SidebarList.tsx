@@ -8,6 +8,7 @@ import SidebarListProject from "./SidebarListProject/SidebarListProject";
 
 import styles from "./SidebarList.module.scss";
 import { ModalTypes, ProjectTypes } from "types";
+import SidebarListAdd from "./SidebarListAdd/SidebarListAdd";
 
 const SidebarList: FunctionComponent = () => {
   const { projects } = useProject();
@@ -56,6 +57,7 @@ const SidebarList: FunctionComponent = () => {
               }
             />
           ))}
+          <SidebarListAdd />
         </div>
       </div>
     </nav>

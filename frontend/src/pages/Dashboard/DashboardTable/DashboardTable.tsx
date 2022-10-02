@@ -16,6 +16,7 @@ const DashboardTable = () => {
   const {
     tasks,
     getAll: { invoke, loading },
+    update: { invoke: updateInvoke, loading: updateLoading },
   } = useTask();
   const { openModal } = useLayout();
 
@@ -67,6 +68,8 @@ const DashboardTable = () => {
               priority="Important"
               tag={task.project.name}
               color={task.project.color}
+              value={task.completed}
+              disabled={updateLoading}
               onUpdateClick={() =>
                 openModal({
                   type: ModalTypes.Type.UpdateTask,
@@ -78,6 +81,14 @@ const DashboardTable = () => {
                   type: ModalTypes.Type.DeleteTask,
                   data: {
                     id: task.id,
+                  },
+                })
+              }
+              onCheckboxClick={() =>
+                updateInvoke({
+                  variables: {
+                    id: task.id,
+                    completed: !task.completed,
                   },
                 })
               }

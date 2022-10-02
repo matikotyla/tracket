@@ -1,0 +1,11 @@
+.root {
+  @apply sm:flex-auto;
+}
+
+.title {
+  @apply text-2xl font-semibold text-gray-900;
+}
+
+.text {
+  @apply mt-1 text-sm text-gray-500;
+}
