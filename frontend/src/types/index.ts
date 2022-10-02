@@ -17,3 +17,4 @@ export { default as ModalTypes } from "./Modal.types";
 export { type default as StylesTypes } from "./Styles.types";
 export { type default as CacheTypes } from "./Cache.types";
 export { type default as TaskTypes } from "./Task.types";
+export { default as SettingsTypes } from "./Settings.types";

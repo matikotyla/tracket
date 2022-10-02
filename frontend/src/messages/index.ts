@@ -1,3 +1,4 @@
 export { default as AuthMessages } from "./Auth.messages";
 export { default as ProjectMessages } from "./Project.messages";
 export { default as TaskMessages } from "./Task.messages";
+export { default as UserMessages } from "./User.messages";

@@ -9,12 +9,16 @@ export const [AuthContext, AuthProvider] =
   });
 
 export const AuthListener: FunctionComponent = () => {
-  const { authenticated } = useAuth();
+  const { authenticated, signOut } = useAuth();
   const { getUser } = useUser();
 
   useEffect(() => {
     if (authenticated) {
-      getUser();
+      getUser().then((response) => {
+        if (response.error) {
+          signOut();
+        }
+      });
     }
   }, [authenticated]);
 

@@ -18,6 +18,7 @@ const Input: FunctionComponent<InputProps> = ({
   hint = undefined,
   error = undefined,
   valid = true,
+  disabled = false,
   onChange,
 }) => {
   return (
@@ -34,9 +35,10 @@ const Input: FunctionComponent<InputProps> = ({
           autoComplete={autoComplete}
           required={required}
           placeholder={placeholder}
+          disabled={disabled}
           data-testid="input-field"
           className={clsx(
-            "appearance-none block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm",
+            "appearance-none block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none disabled:cursor-not-allowed disabled:border-gray-200 disabled:bg-gray-50 disabled:text-gray-500 sm:text-sm",
             valid
               ? "border-gray-300 placeholder-gray-400 focus:ring-teal-500 focus:border-teal-500"
               : "border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500 pr-10"

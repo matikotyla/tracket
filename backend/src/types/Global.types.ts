@@ -74,6 +74,7 @@ export interface NexusGenFieldTypes {
     registerUser: NexusGenRootTypes['User']; // User!
     updateProject: NexusGenRootTypes['Project']; // Project!
     updateTask: NexusGenRootTypes['Task']; // Task!
+    updateUser: NexusGenRootTypes['User']; // User!
   }
   Payload: { // field return type
     token: string; // String!
@@ -119,6 +120,7 @@ export interface NexusGenFieldTypeNames {
     registerUser: 'User'
     updateProject: 'Project'
     updateTask: 'Task'
+    updateUser: 'User'
   }
   Payload: { // field return type name
     token: 'String'
@@ -191,6 +193,11 @@ export interface NexusGenArgTypes {
       content?: string | null; // String
       description?: string | null; // String
       id: string; // String!
+    }
+    updateUser: { // args
+      firstName?: string | null; // String
+      lastName?: string | null; // String
+      name?: string | null; // String
     }
   }
   Query: {

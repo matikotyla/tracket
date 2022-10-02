@@ -12,5 +12,6 @@ export interface InputProps {
   hint?: string | undefined;
   error?: string | undefined;
   valid?: boolean | undefined;
+  disabled?: boolean | undefined;
   onChange: ChangeEventHandler<HTMLInputElement>;
 }

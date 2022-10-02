@@ -1,9 +1,16 @@
-import { makeVar, useLazyQuery, useReactiveVar } from "@apollo/client";
+import {
+  makeVar,
+  useLazyQuery,
+  useMutation,
+  useReactiveVar,
+} from "@apollo/client";
+import { UserMutation } from "mutation";
 import { UserQuery } from "query";
 import { useEffect } from "react";
 import { UserTypes } from "types";
 import { NotificationUtils } from "utils";
 import { UserVariables } from "variables";
+import useAuth from "./useAuth";
 import useVar from "./useVar";
 
 const useUser = (): UserTypes.Hook => {
@@ -21,13 +28,36 @@ const useUser = (): UserTypes.Hook => {
       onCompleted: (data) => {
         setUser(data.user);
       },
-      onError: () =>
+      onError: () => {
         NotificationUtils.notify(
           "User error",
           "Cannot fetch user data.",
           "error"
-        ),
+        );
+      },
     });
+
+  const [updateUser, { data: updateData, loading: updateLoading }] =
+    useMutation<UserTypes.Update.Response, UserTypes.Update.Request>(
+      UserMutation.UpdateUser,
+      {
+        onCompleted: () => {
+          NotificationUtils.notify(
+            "User updated",
+            "User has been successfully updated",
+            "success"
+          );
+        },
+        onError: (error) => {
+          console.log(error);
+          NotificationUtils.notify(
+            "User not updated",
+            "Something went wrong when updating a user",
+            "error"
+          );
+        },
+      }
+    );
 
   useEffect(() => {
     const isLoading = getUserLoading;
@@ -45,6 +75,10 @@ const useUser = (): UserTypes.Hook => {
     setUser,
     removeUser,
     getUser,
+    update: {
+      invoke: updateUser,
+      loading: updateLoading,
+    },
   };
 };
 

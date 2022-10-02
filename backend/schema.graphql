@@ -31,6 +31,7 @@ type Mutation {
   registerUser(email: String!, firstName: String!, lastName: String!, password: String!): User!
   updateProject(color: Color, id: String!, name: String): Project!
   updateTask(completed: Boolean, content: String, description: String, id: String!): Task!
+  updateUser(firstName: String, lastName: String, name: String): User!
 }
 
 type Payload {

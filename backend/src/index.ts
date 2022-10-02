@@ -12,7 +12,7 @@ import {
   AuthModel,
 } from "model";
 import { ProjectQuery, TaskQuery, UserQuery } from "query";
-import { TaskMutation, AuthMutation } from "mutation";
+import { TaskMutation, AuthMutation, UserMutation } from "mutation";
 import ProjectMutation from "mutation/Project.mutation";
 
 export const schema = makeSchema({
@@ -40,6 +40,7 @@ export const schema = makeSchema({
     TaskMutation.Create,
     TaskMutation.Update,
     TaskMutation.Delete,
+    UserMutation.Update,
   ],
   outputs: {
     schema: join(process.cwd(), "schema.graphql"),

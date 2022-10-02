@@ -8,3 +8,4 @@ export { default as AuthData } from "./Auth.data";
 export { default as SidebarData } from "./Sidebar.data";
 export { default as TableData } from "./Table.data";
 export { default as StylesData } from "./Styles.data";
+export { default as SettingsData } from "./Settings.data";

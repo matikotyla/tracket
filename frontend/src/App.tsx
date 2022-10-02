@@ -5,12 +5,17 @@ import { Flip, ToastContainer } from "react-toastify";
 import { Navbar, Footer, Sidebar, Modal } from "components";
 import {
   About,
+  Calendar,
   Contact,
   Dashboard,
+  Documents,
   Home,
   Login,
   Pricing,
+  Projects,
   Register,
+  Reports,
+  Settings,
   Team,
 } from "pages";
 import { PrivateRoute, PublicRoute } from "routes";
@@ -61,6 +66,11 @@ const App = () => {
               <Route path="app" element={<AppContainer />}>
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="team" element={<Team />} />
+                <Route path="projects" element={<Projects />} />
+                <Route path="calendar" element={<Calendar />} />
+                <Route path="documents" element={<Documents />} />
+                <Route path="reports" element={<Reports />} />
+                <Route path="settings" element={<Settings />} />
                 <Route index element={<Navigate to="dashboard" />} />
               </Route>
             </Route>
