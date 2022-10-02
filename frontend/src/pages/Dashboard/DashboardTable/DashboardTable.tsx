@@ -35,17 +35,17 @@ const DashboardTable = () => {
           </TableHeader>
           <TableHeader>
             <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-              Title
+              Time
             </p>
           </TableHeader>
           <TableHeader>
             <p className="text-left text-xs font-medium uppercase tracking-wide text-gray-500">
-              Email
+              Priority
             </p>
           </TableHeader>
           <TableHeader>
             <p className="text-xs font-medium uppercase tracking-wide text-gray-500">
-              Role
+              Project
             </p>
           </TableHeader>
           <TableHeader>
