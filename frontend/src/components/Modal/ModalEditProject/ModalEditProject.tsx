@@ -63,6 +63,7 @@ const ModalEditProject: FunctionComponent<ModalEditProjectProps> = ({
                 type="text"
                 value={value}
                 label="Name"
+                autoComplete="off"
                 onChange={onChange}
                 valid={!errors.name}
                 error={errors.name?.message}
