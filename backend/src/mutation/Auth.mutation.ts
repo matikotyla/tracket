@@ -1,11 +1,11 @@
 import { UserInputError } from "apollo-server";
 import { compare, hash } from "bcryptjs";
-import { AuthConstant } from "constant";
-import { NotFoundError } from "error";
+import { AuthConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { sign } from "jsonwebtoken";
 import { mutationField, nonNull, stringArg } from "nexus";
-import { AuthTypes } from "types";
-import { AuthValidation } from "validation";
+import { AuthTypes } from "@types";
+import { AuthValidation } from "@validation";
 
 namespace AuthMutation {
   export const Login = mutationField("loginUser", {

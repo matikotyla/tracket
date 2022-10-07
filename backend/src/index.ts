@@ -1,5 +1,6 @@
+require("module-alias/register");
 import { ApolloServer } from "apollo-server";
-import { ServerContext } from "context";
+import { ServerContext } from "@context";
 
 import { makeSchema } from "nexus";
 import { join } from "path";
@@ -10,10 +11,14 @@ import {
   TaskModel,
   ColorModel,
   AuthModel,
-} from "model";
-import { ProjectQuery, TaskQuery, UserQuery } from "query";
-import { TaskMutation, AuthMutation, UserMutation } from "mutation";
-import ProjectMutation from "mutation/Project.mutation";
+} from "@model";
+import { ProjectQuery, TaskQuery, UserQuery } from "@query";
+import {
+  TaskMutation,
+  AuthMutation,
+  UserMutation,
+  ProjectMutation,
+} from "@mutation";
 
 export const schema = makeSchema({
   types: [
@@ -57,7 +62,7 @@ export const server = new ApolloServer({
   context: ServerContext.Context,
 });
 
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 server.listen({ port }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);

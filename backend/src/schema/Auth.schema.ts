@@ -1,6 +1,6 @@
 import Joi from "joi";
-import { AuthRule } from "rule";
-import { GlobalTypes } from "types";
+import { AuthRule } from "@rule";
+import { GlobalTypes } from "@types";
 
 namespace AuthSchema {
   export const Login = Joi.object<

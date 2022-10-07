@@ -1,9 +1,9 @@
 import { AuthenticationError, UserInputError } from "apollo-server";
-import { ErrorConstant } from "constant";
-import { NotFoundError } from "error";
+import { ErrorConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { booleanArg, mutationField, nonNull, stringArg } from "nexus";
 
-import { TaskValidation } from "validation";
+import { TaskValidation } from "@validation";
 
 namespace TaskMutation {
   export const Create = mutationField("createTask", {

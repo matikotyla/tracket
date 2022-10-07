@@ -1,8 +1,8 @@
 import { AuthenticationError, UserInputError } from "apollo-server";
-import { ErrorConstant } from "constant";
-import { NotFoundError } from "error";
+import { ErrorConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { mutationField, nonNull, stringArg } from "nexus";
-import { UserValidation } from "validation";
+import { UserValidation } from "@validation";
 
 namespace UserMutation {
   export const Update = mutationField("updateUser", {

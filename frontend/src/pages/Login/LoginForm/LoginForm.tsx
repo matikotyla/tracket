@@ -20,7 +20,9 @@ const LoginForm: FunctionComponent = () => {
   const [loginUser, { data, loading, error, reset }] = useMutation<
     AuthTypes.Login.Response,
     AuthTypes.Login.Request
-  >(AuthMutation.LoginUser);
+  >(AuthMutation.LoginUser, {
+    fetchPolicy: "no-cache",
+  });
 
   const {
     control,

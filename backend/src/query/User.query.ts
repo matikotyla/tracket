@@ -1,6 +1,6 @@
 import { AuthenticationError } from "apollo-server";
-import { ErrorConstant } from "constant";
-import { NotFoundError } from "error";
+import { ErrorConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { nonNull, queryField } from "nexus";
 
 namespace UserQuery {

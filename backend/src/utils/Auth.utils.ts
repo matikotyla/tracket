@@ -1,6 +1,6 @@
-import { AuthConstant } from "constant";
+import { AuthConstant } from "@constant";
 import { verify } from "jsonwebtoken";
-import { AuthTypes } from "types";
+import { AuthTypes } from "@types";
 
 namespace AuthUtil {
   export const decode = (header: string): AuthTypes.TokenPayload => {

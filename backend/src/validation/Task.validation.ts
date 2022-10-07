@@ -1,6 +1,6 @@
 import { ValidationResult } from "joi";
-import { TaskSchema } from "schema";
-import { GlobalTypes } from "types";
+import { TaskSchema } from "@schema";
+import { GlobalTypes } from "@types";
 
 namespace TaskValidation {
   export const validateGetTask = (

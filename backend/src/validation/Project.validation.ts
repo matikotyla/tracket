@@ -1,6 +1,6 @@
 import { ValidationResult } from "joi";
-import { ProjectSchema } from "schema";
-import { GlobalTypes } from "types";
+import { ProjectSchema } from "@schema";
+import { GlobalTypes } from "@types";
 
 namespace ProjectValidation {
   export const validateGetProject = (

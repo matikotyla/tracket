@@ -1,8 +1,8 @@
 import { AuthenticationError, UserInputError } from "apollo-server";
-import { ErrorConstant } from "constant";
-import { NotFoundError } from "error";
+import { ErrorConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { list, nonNull, queryField, stringArg } from "nexus";
-import { ProjectValidation } from "validation";
+import { ProjectValidation } from "@validation";
 
 namespace ProjectQuery {
   export const Get = queryField("project", {

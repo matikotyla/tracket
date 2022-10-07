@@ -1,6 +1,6 @@
 import Joi from "joi";
-import { UserRule } from "rule";
-import { GlobalTypes } from "types";
+import { UserRule } from "@rule";
+import { GlobalTypes } from "@types";
 
 namespace UserSchema {
   export const Update = Joi.object<

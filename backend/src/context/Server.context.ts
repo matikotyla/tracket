@@ -1,8 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { ContextFunction } from "apollo-server-core";
 import { ExpressContext } from "apollo-server-express";
-import { ServerTypes } from "types";
-import { AuthUtil } from "utils";
+import { ServerTypes } from "@types";
+import { AuthUtil } from "@utils";
 
 export const prisma = new PrismaClient();
 

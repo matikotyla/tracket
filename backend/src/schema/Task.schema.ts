@@ -1,7 +1,7 @@
 import Joi from "joi";
 
-import { TaskRule } from "rule";
-import { GlobalTypes } from "types";
+import { TaskRule } from "@rule";
+import { GlobalTypes } from "@types";
 
 namespace TaskSchema {
   export const Get = Joi.object<GlobalTypes.NexusGenArgTypes["Query"]["task"]>({

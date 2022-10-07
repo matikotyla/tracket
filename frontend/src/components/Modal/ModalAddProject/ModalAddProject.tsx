@@ -44,7 +44,7 @@ const ModalAddProject: FunctionComponent<ModalAddProjectProps> = ({
           Add project
         </h3>
         <p className="mt-2 text-sm text-gray-500">
-          Create a project to store your habits
+          Create a project to store your tasks
         </p>
       </div>
       <div className="mt-4 space-y-4">

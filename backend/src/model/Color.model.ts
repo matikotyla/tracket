@@ -1,5 +1,5 @@
 import { enumType } from "nexus";
-import { ColorConstant } from "constant";
+import { ColorConstant } from "@constant";
 
 export default enumType({
   name: "Color",

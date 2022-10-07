@@ -184,7 +184,7 @@ const DashboardHeader: FunctionComponent = () => {
                 name="desktop-search-candidate"
                 id="desktop-search-candidate"
                 className="hidden w-full rounded-none rounded-l-md border-gray-300 pl-10 focus:border-teal-500 focus:ring-teal-500 sm:block sm:text-sm"
-                placeholder="Search habits"
+                placeholder="Search tasks"
               />
             </div>
             <button

@@ -1,5 +1,6 @@
 import { useReactiveVar } from "@apollo/client";
 import { AuthContext } from "context";
+import { client } from "index";
 import { useCallback, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthTypes } from "types";
@@ -15,6 +16,7 @@ const useAuth = (): AuthTypes.State.Hook => {
   const signIn = useCallback((token: string): void => {
     AuthVariables.authenticated(true);
     AuthUtils.setToken(token);
+    client.clearStore();
     // navigate("/app");
   }, []);
 

@@ -1,7 +1,7 @@
 import Joi from "joi";
 
-import { ProjectRule } from "rule";
-import { GlobalTypes } from "types";
+import { ProjectRule } from "@rule";
+import { GlobalTypes } from "@types";
 
 namespace ProjectSchema {
   export const Get = Joi.object<

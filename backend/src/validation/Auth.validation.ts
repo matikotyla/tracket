@@ -1,6 +1,6 @@
 import { ValidationResult } from "joi";
-import { AuthSchema } from "schema";
-import { GlobalTypes } from "types";
+import { AuthSchema } from "@schema";
+import { GlobalTypes } from "@types";
 
 namespace AuthValidation {
   export const validateLoginUser = (

@@ -1,8 +1,8 @@
 import { AuthenticationError, UserInputError } from "apollo-server";
-import { ErrorConstant } from "constant";
-import { NotFoundError } from "error";
+import { ErrorConstant } from "@constant";
+import { NotFoundError } from "@error";
 import { list, nonNull, queryField, stringArg } from "nexus";
-import { TaskValidation } from "validation";
+import { TaskValidation } from "@validation";
 
 namespace TaskQuery {
   export const Get = queryField("task", {

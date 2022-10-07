@@ -4,15 +4,26 @@
     "module": "commonjs",
     "lib": ["esnext"],
     "strict": true,
-    "rootDir": ".",
+    "rootDir": "src",
     "outDir": "dist",
     "sourceMap": true,
     "esModuleInterop": true,
     "baseUrl": "src",
-    "moduleResolution": "node"
-    // "paths": {
-    //   "@models/*": ["models/*"]
-    // }
+    "moduleResolution": "node",
+    "paths": {
+      "@constant": ["constant/"],
+      "@context": ["context/"],
+      "@error": ["error/"],
+      "@graphql": ["graphql/"],
+      "@model": ["model/"],
+      "@mutation": ["mutation/"],
+      "@query": ["query/"],
+      "@rule": ["rule/"],
+      "@schema": ["schema/"],
+      "@types": ["types/"],
+      "@utils": ["utils/"],
+      "@validation": ["validation/"]
+    }
   },
   "ts-node": {
     "require": ["tsconfig-paths/register"]

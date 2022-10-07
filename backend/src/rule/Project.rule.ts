@@ -1,6 +1,6 @@
 import Joi from "joi";
 
-import { ColorConstant } from "constant";
+import { ColorConstant } from "@constant";
 
 namespace ProjectRule {
   export namespace Get {
