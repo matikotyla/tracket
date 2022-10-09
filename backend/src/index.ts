@@ -1,4 +1,19 @@
-require("module-alias/register");
+import moduleAlias from "module-alias";
+moduleAlias.addAliases({
+  "@constant": `${__dirname}/constant`,
+  "@context": `${__dirname}/context`,
+  "@error": `${__dirname}/error`,
+  "@graphql": `${__dirname}/graphql`,
+  "@model": `${__dirname}/model`,
+  "@mutation": `${__dirname}/mutation`,
+  "@query": `${__dirname}/query`,
+  "@rule": `${__dirname}/rule`,
+  "@schema": `${__dirname}/schema`,
+  "@types": `${__dirname}/types`,
+  "@utils": `${__dirname}/utils`,
+  "@validation": `${__dirname}/validation`,
+});
+
 import { ApolloServer } from "apollo-server";
 import { ServerContext } from "@context";
 

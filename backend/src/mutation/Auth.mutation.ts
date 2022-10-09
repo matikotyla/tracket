@@ -1,4 +1,4 @@
-import { UserInputError } from "apollo-server";
+import { ApolloError, UserInputError } from "apollo-server";
 import { compare, hash } from "bcryptjs";
 import { AuthConstant } from "@constant";
 import { NotFoundError } from "@error";
@@ -34,13 +34,15 @@ namespace AuthMutation {
         throw new UserInputError("Invalid password");
       }
 
-      const payload: AuthTypes.TokenPayload = {
-        userId: user.id,
-      };
-
-      const token = sign(payload, AuthConstant.Secret, {
-        expiresIn: AuthConstant.ExpiresIn,
-      });
+      const token = sign(
+        {
+          userId: user.id,
+        },
+        AuthConstant.Secret,
+        {
+          expiresIn: AuthConstant.ExpiresIn,
+        },
+      );
 
       return { token };
     },

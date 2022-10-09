@@ -129,6 +129,19 @@ const useProject = (): ProjectTypes.Hook => {
           "error"
         );
       },
+      // update(cache, data) {
+      //   console.log("here");
+      //   cache.modify({
+      //     fields: {
+      //       tasks(existingTasks = [], other) {
+      //         console.log("here");
+      //         console.log(data);
+      //         console.log(existingTasks);
+      //         console.log(other);
+      //       },
+      //     },
+      //   });
+      // },
     }
   );
 

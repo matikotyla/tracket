@@ -1,7 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
-import { ApolloClient, ApolloProvider, createHttpLink } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloLink,
+  ApolloProvider,
+  createHttpLink,
+  from,
+} from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 
 import App from "./App";
@@ -12,6 +18,7 @@ import { ApolloCache } from "cache";
 
 const httpLink = createHttpLink({
   uri: "https://app-tracket.herokuapp.com/",
+  // uri: "http://localhost:4000/",
 });
 
 const authLink = setContext((_, { headers }) => {

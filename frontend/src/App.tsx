@@ -20,9 +20,9 @@ import {
 } from "pages";
 import { PrivateRoute, PublicRoute } from "routes";
 import { AppContainer, ModalContainer } from "container";
+import { AuthListener } from "context";
 
 import "react-toastify/dist/ReactToastify.css";
-import { AuthListener } from "context";
 
 const App = () => {
   const location = useLocation();

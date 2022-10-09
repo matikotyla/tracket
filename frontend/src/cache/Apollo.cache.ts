@@ -1,5 +1,6 @@
 import { FieldMergeFunction, InMemoryCache } from "@apollo/client";
-import { CacheTypes } from "types";
+import { ProjectQuery, TaskQuery } from "query";
+import { CacheTypes, ProjectTypes, TaskTypes } from "types";
 
 export default new InMemoryCache({
   typePolicies: {
@@ -31,13 +32,40 @@ export default new InMemoryCache({
         //   },
         // },
         deleteProject: {
-          merge(_, incoming: CacheTypes.Item, { cache }) {
+          merge(
+            _,
+            incoming: CacheTypes.Item,
+            {
+              cache,
+              field,
+              fieldName,
+              args,
+              variables,
+              isReference,
+              toReference,
+            }
+          ) {
             cache.modify({
               fields: {
                 projects(existing: CacheTypes.Item[] = []) {
                   return existing.filter(
                     (item) => item.__ref !== incoming.__ref
                   );
+                },
+                tasks(existing: CacheTypes.Item[]) {
+                  // const items = cache.readQuery<{ tasks: TaskTypes.Task[] }>({
+                  //   query: TaskQuery.GetAll,
+                  // });
+                  // console.log(existing);
+                  // console.log(items);
+                  // console.log(incoming);
+                  // console.log(
+                  //   items?.tasks.filter(
+                  //     (task) => `Project:${task.project.id}` !== incoming.__ref
+                  //   )
+                  // );
+                  // console.log(existing.filter(({__ref}) => _ref === `${}`))
+                  // TODO: remove all tasks associated with the deleted project
                 },
               },
             });
