@@ -1,0 +1,13 @@
+{
+  "localization": {
+    "code": "fr",
+    "name": "Français",
+    "flag": "fr"
+  },
+  "home": {
+    "hero": {
+      "titleFirst": "Organisez votre",
+      "titleSecond": "travail et vie"
+    }
+  }
+}

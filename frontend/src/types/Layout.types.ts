@@ -1,4 +1,4 @@
-import ModalTypes from "./Modal.types";
+import { ModalTypes } from "types";
 
 namespace LaytoutTypes {
   export interface State {

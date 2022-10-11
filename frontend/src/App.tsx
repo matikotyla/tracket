@@ -2,6 +2,8 @@ import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Flip, ToastContainer } from "react-toastify";
 
+import i18next from "i18next";
+
 import { Navbar, Footer, Sidebar, Modal } from "components";
 import {
   About,
@@ -23,11 +25,21 @@ import { AppContainer, ModalContainer } from "container";
 import { AuthListener } from "context";
 
 import "react-toastify/dist/ReactToastify.css";
+import "flag-icons/css/flag-icons.min.css";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const {
+    i18n: { isInitialized },
+  } = useTranslation();
   const location = useLocation();
 
-  return (
+  useEffect(() => {
+    console.log(isInitialized);
+  }, [isInitialized]);
+
+  return isInitialized ? (
     <div>
       <Navbar authenticated={false} />
       <ToastContainer
@@ -78,7 +90,7 @@ const App = () => {
         </AnimatePresence>
       </Sidebar>
     </div>
-  );
+  ) : null;
 };
 
 export default App;

@@ -24,3 +24,4 @@ export { default as Task } from "./Task/Task";
 export { default as TaskLoader } from "./Task/TaskLoader/TaskLoader";
 export { default as Select } from "./Select/Select";
 export { default as SelectOption } from "./Select/SelectOption/SelectOption";
+export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";

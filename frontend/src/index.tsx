@@ -9,6 +9,7 @@ import {
   from,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { LocalizationConfig } from "config";
 
 import App from "./App";
 
@@ -16,9 +17,11 @@ import "./index.scss";
 import { AuthProvider, LayoutProvider } from "context";
 import { ApolloCache } from "cache";
 
+LocalizationConfig.initialize();
+
 const httpLink = createHttpLink({
-  uri: "https://app-tracket.herokuapp.com/",
-  // uri: "http://localhost:4000/",
+  // uri: "https://app-tracket.herokuapp.com/",
+  uri: "http://localhost:4000/",
 });
 
 const authLink = setContext((_, { headers }) => {

@@ -9,3 +9,4 @@ export { default as SidebarData } from "./Sidebar.data";
 export { default as TableData } from "./Table.data";
 export { default as StylesData } from "./Styles.data";
 export { default as SettingsData } from "./Settings.data";
+export { default as LocalizationData } from "./Localization.data";
