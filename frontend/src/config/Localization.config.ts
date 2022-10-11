@@ -20,7 +20,7 @@ namespace LocalizationConfig {
         {
           supportedLngs: LocalizationData.languages,
           fallbackLng: LocalizationData.languages[0],
-          debug: true,
+          debug: false,
           react: {
             useSuspense: false,
           },

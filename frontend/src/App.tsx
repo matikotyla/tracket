@@ -1,10 +1,9 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { Flip, ToastContainer } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
-import i18next from "i18next";
-
-import { Navbar, Footer, Sidebar, Modal } from "components";
+import { Navbar, Footer, Sidebar } from "components";
 import {
   About,
   Calendar,
@@ -26,18 +25,12 @@ import { AuthListener } from "context";
 
 import "react-toastify/dist/ReactToastify.css";
 import "flag-icons/css/flag-icons.min.css";
-import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 
 const App = () => {
   const {
     i18n: { isInitialized },
   } = useTranslation();
   const location = useLocation();
-
-  useEffect(() => {
-    console.log(isInitialized);
-  }, [isInitialized]);
 
   return isInitialized ? (
     <div>

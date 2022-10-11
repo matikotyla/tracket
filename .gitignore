@@ -13,3 +13,5 @@ stack.json
 local
 documentation/scripts/*.json
 .DS_Store
+# Local Netlify folder
+.netlify
