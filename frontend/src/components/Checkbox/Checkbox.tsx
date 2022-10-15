@@ -13,7 +13,7 @@ const Checkbox: FunctionComponent<CheckboxProps> = ({
   error = undefined,
 }) => {
   return (
-    <div className={styles.root}>
+    <div className={styles.root} data-testid="checkbox">
       <div className={styles.content}>
         <input
           id={id}

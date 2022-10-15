@@ -33,7 +33,7 @@ const App = () => {
   const location = useLocation();
 
   return isInitialized ? (
-    <div>
+    <div data-testid="app">
       <Navbar authenticated={false} />
       <ToastContainer
         position="top-right"
