@@ -42,6 +42,15 @@ jobs:
     - name: Build  
       run: npm run build --if-present
 
+  deploy:
+    runs-on: ubuntu-lates
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v3
 
-    # - name: Test  
-    #   run: npm test
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: "4c3aa3f3-a924-47f1-967b-9b1a16f5e19f"
+          heroku_app_name: "app-tracket"
+          heroku_email: "mati.kotyla@gmail.com"
