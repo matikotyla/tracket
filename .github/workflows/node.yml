@@ -43,7 +43,7 @@ jobs:
       run: npm run build --if-present
 
   deploy:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: backend
