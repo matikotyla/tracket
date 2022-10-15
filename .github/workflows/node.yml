@@ -102,7 +102,7 @@ jobs:
         working-directory: frontend
     needs: [build-frontend]
     steps:
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
       - name: Deploy to Netlify
         uses: jsmrcaga/action-netlify-deploy@v1.1.0
