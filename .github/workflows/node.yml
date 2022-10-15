@@ -47,7 +47,7 @@ jobs:
     defaults:
       run:
         working-directory: backend
-    needs: [build]
+    needs: [build-backend]
     steps:
       - uses: actions/checkout@v3
 
