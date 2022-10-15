@@ -44,6 +44,9 @@ jobs:
 
   deploy:
     runs-on: ubuntu-lates
+    defaults:
+      run:
+        working-directory: backend
     needs: [build]
     steps:
       - uses: actions/checkout@v3
