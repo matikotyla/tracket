@@ -10,56 +10,56 @@ on:
     branches: [ "main" ]
 
 jobs:
-  # build-backend:
-  #   runs-on: ubuntu-latest
-  #   environment: production
-  #   defaults:
-  #     run:
-  #       working-directory: backend
-  #   strategy:
-  #     matrix:
-  #       node-version: [16.x]
-  #       # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+  build-backend:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: backend
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-  #   steps:
-  #   - uses: actions/checkout@v3
+    steps:
+    - uses: actions/checkout@v3
 
-  #   - name: Use Node.js ${{ matrix.node-version }}
-  #     uses: actions/setup-node@v3
-  #     with:
-  #       node-version: ${{ matrix.node-version }}
-  #       cache: 'npm'
-  #       cache-dependency-path: backend/package-lock.json
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
 
-  #   - name: Install dependencies
-  #     run: npm ci
+    - name: Install dependencies
+      run: npm ci
 
-  #   - name: Lint
-  #     run: npm run lint
+    - name: Lint
+      run: npm run lint
 
-  #   - name: Format
-  #     run: npm run format
+    - name: Format
+      run: npm run format
 
-  #   - name: Build  
-  #     run: npm run build --if-present
+    - name: Build  
+      run: npm run build --if-present
 
-  # deploy-backend:
-  #   runs-on: ubuntu-latest
-  #   environment: production
-  #   defaults:
-  #     run:
-  #       working-directory: backend
-  #   needs: [build-backend]
-  #   steps:
-  #     - uses: actions/checkout@v3
+  deploy-backend:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        working-directory: backend
+    needs: [build-backend]
+    steps:
+      - uses: actions/checkout@v3
 
-  #     - name: Deploy to Heroku
-  #       uses: akhileshns/heroku-deploy@v3.12.12
-  #       with:
-  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-  #         heroku_app_name: "app-tracket"
-  #         heroku_email: "mati.kotyla@gmail.com"
-  #         appdir: "backend"
+      - name: Deploy to Heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "app-tracket"
+          heroku_email: "mati.kotyla@gmail.com"
+          appdir: "backend"
 
   build-frontend:
     runs-on: ubuntu-latest
@@ -94,7 +94,7 @@ jobs:
     - name: Test
       run: npm run test
 
-    - name: Artifacts
+    - name: Upload artifacts
       uses: actions/upload-artifact@v3
       with:
         name: build
@@ -108,43 +108,18 @@ jobs:
         working-directory: frontend
     needs: [build-frontend]
     steps:
-      - name: Artifacts
+      - uses: actions/checkout@v3
+
+      - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
           name: build
           path: ./frontend/build
-          
-      # - uses: actions/checkout@v3
 
-      # - name: Deploy to Netlify
-      #   uses: netlify/actions/cli@master
-      #   with:
-      #     args: deploy --dir=frontend/build --prod
-      #   env:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-      #     NETLIFY_SITE_ID: 885055db-2c52-4b87-be59-2f5c4bfb90ba
-
-      - uses: actions/checkout@v3
-      - uses: jsmrcaga/action-netlify-deploy@master
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-          NETLIFY_SITE_ID: 885055db-2c52-4b87-be59-2f5c4bfb90ba
-          build_directory: frontend/build
-
-
-
-
-
-        # uses: netlify/actions/cli@master
-        # with:
-        #   publish-dir: 'build'
-        #   # github-token: ${{ secrets.GITHUB_TOKEN }}
-        # env:
-        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-        #   NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
-      # - name: Deploy to Netlify
-      #   uses: jsmrcaga/action-netlify-deploy@v1.1.0
-      #   with:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-      #     NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
-      #     NETLIFY_DEPLOY_TO_PROD: true
+          args: deploy --dir=frontend/build --prod
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
