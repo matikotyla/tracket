@@ -94,6 +94,12 @@ jobs:
     - name: Test
       run: npm run test
 
+    - name: Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: ./build
+
   deploy-frontend:
     runs-on: ubuntu-latest
     environment: production
@@ -102,16 +108,28 @@ jobs:
         working-directory: frontend
     needs: [build-frontend]
     steps:
-      - uses: actions/checkout@v3
+      - name: Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: ./build
+          
+      # - uses: actions/checkout@v3
 
       - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.2
+        uses: netlify/actions/cli@master
         with:
-          publish-dir: 'build'
-          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          args: deploy --dir=build --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
-          NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
+          NETLIFY_SITE_ID: 885055db-2c52-4b87-be59-2f5c4bfb90ba
+        # uses: netlify/actions/cli@master
+        # with:
+        #   publish-dir: 'build'
+        #   # github-token: ${{ secrets.GITHUB_TOKEN }}
+        # env:
+        #   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+        #   NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
       # - name: Deploy to Netlify
       #   uses: jsmrcaga/action-netlify-deploy@v1.1.0
       #   with:
