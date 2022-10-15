@@ -102,11 +102,19 @@ jobs:
         working-directory: frontend
     needs: [build-frontend]
     steps:
-      # - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v1.1.0
+        uses: nwtgck/actions-netlify@v1.2
         with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+          publish-dir: './build'
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
-          NETLIFY_DEPLOY_TO_PROD: true
+      # - name: Deploy to Netlify
+      #   uses: jsmrcaga/action-netlify-deploy@v1.1.0
+      #   with:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_ACCESS_TOKEN }}
+      #     NETLIFY_SITE_ID: "885055db-2c52-4b87-be59-2f5c4bfb90ba"
+      #     NETLIFY_DEPLOY_TO_PROD: true
