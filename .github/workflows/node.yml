@@ -98,7 +98,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: build
-        path: ./build
+        path: ./frontend/build
 
   deploy-frontend:
     runs-on: ubuntu-latest
@@ -112,7 +112,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: ./build
+          path: ./frontend/build
           
       # - uses: actions/checkout@v3
 
