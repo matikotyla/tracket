@@ -5,8 +5,7 @@ import { ApolloCache } from "cache";
 
 namespace ApolloConfig {
   export const httpLink = createHttpLink({
-    uri: "https://app-tracket.herokuapp.com/",
-    // uri: "http://localhost:4000/",
+    uri: process.env.REACT_APP_URL,
   });
 
   export const authLink = setContext((_, { headers }) => {
