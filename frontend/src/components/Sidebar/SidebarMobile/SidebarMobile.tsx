@@ -1,5 +1,5 @@
-import { Fragment, FunctionComponent } from "react";
-import { NavLink } from "react-router-dom";
+import { Fragment, FunctionComponent, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -12,28 +12,23 @@ import { SidebarMobileProps } from "./SidebarMobile.props";
 
 import styles from "./SidebarMobile.module.scss";
 import SidebarList from "../SidebarList/SidebarList";
-
-const secondaryNavigation = [
-  { name: "Website redesign", href: "#" },
-  { name: "GraphQL API", href: "#" },
-  { name: "Customer migration guides", href: "#" },
-  { name: "Profit sharing program", href: "#" },
-];
-
-const teams = [
-  { name: "Engineering", href: "#", bgColorClass: "bg-indigo-500" },
-  { name: "Human Resources", href: "#", bgColorClass: "bg-green-500" },
-  { name: "Customer Success", href: "#", bgColorClass: "bg-yellow-500" },
-];
-
-function classNames(...classes: any) {
-  return classes.filter(Boolean).join(" ");
-}
+import { useLayout } from "hooks";
 
 const SidebarMobile: FunctionComponent<SidebarMobileProps> = ({
   open,
   onClick,
 }) => {
+  const { modal } = useLayout();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    onClick(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    onClick(false);
+  }, [modal]);
+
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog as="div" className={styles.root} onClose={onClick}>

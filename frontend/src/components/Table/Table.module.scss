@@ -7,11 +7,11 @@
 }
 
 .content {
-  @apply inline-block min-w-full py-2 align-middle px-4 md:px-6 lg:px-8;
+  @apply inline-block min-w-full py-2 align-middle px-4 sm:px-6 lg:px-8;
 }
 
 .box {
-  @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 md:rounded-lg;
+  @apply overflow-hidden shadow ring-1 ring-black ring-opacity-5 rounded-lg;
 }
 
 .table {

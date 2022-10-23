@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import {
   Table,
@@ -146,7 +146,7 @@ const DashboardTable = () => {
       <div className="lg:hidden mt-8">
         <Table>
           {tasks.map((task) => (
-            <>
+            <Fragment key={task.id}>
               <TableHead>
                 <TableRow>
                   <TableHeader colSpan={2}>
@@ -189,25 +189,8 @@ const DashboardTable = () => {
                   }
                 />
               </TableBody>
-            </>
+            </Fragment>
           ))}
-          <TableHead>
-            <TableRow>
-              <TableHeader colSpan={2}>
-                <div className="py-3"></div>
-              </TableHeader>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableData>
-                <p className="text-sm font-medium text-gray-900">Name</p>
-              </TableData>
-              <TableData>
-                <p className="text-sm text-gray-500">Lindsay Walton</p>
-              </TableData>
-            </TableRow>
-          </TableBody>
         </Table>
       </div>
     </>
