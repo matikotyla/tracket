@@ -35,6 +35,7 @@ const activityItems = [
     commit: "2d89f0c8",
     environment: "production",
     time: "1h",
+    text: "Added four new tasks in the Home project",
   },
   {
     id: 2,
@@ -43,6 +44,7 @@ const activityItems = [
     commit: "11464223",
     environment: "staging",
     time: "12h",
+    text: "Created a new project called Home",
   },
   {
     id: 3,
@@ -51,6 +53,7 @@ const activityItems = [
     commit: "dad28e95",
     environment: "production",
     time: "2d",
+    text: "Completed two tasks in the Sports project",
   },
   {
     id: 4,
@@ -59,6 +62,7 @@ const activityItems = [
     commit: "624bc94c",
     environment: "production",
     time: "5d",
+    text: "Added three new tasks in the Family project",
   },
   {
     id: 5,
@@ -67,6 +71,7 @@ const activityItems = [
     commit: "5e136005",
     environment: "staging",
     time: "1w",
+    text: "Created a new project called Trip",
   },
 ];
 
@@ -135,9 +140,10 @@ const SidebarAside: FunctionComponent<SidebarAsideProps> = ({ show }) => {
                               </p>
                             </div>
                             <p className="text-sm text-gray-500">
-                              Deployed {activityItem.project} (
+                              {/* Deployed {activityItem.project} (
                               {activityItem.commit} in master) to{" "}
-                              {activityItem.environment}
+                              {activityItem.environment} */}
+                              {activityItem.text}
                             </p>
                           </div>
                         </div>
