@@ -1,6 +1,5 @@
-import { FieldMergeFunction, InMemoryCache } from "@apollo/client";
-import { ProjectQuery, TaskQuery } from "query";
-import { CacheTypes, ProjectTypes, TaskTypes } from "types";
+import { InMemoryCache } from "@apollo/client";
+import { CacheTypes } from "types";
 
 export default new InMemoryCache({
   typePolicies: {

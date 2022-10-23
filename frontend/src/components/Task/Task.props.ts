@@ -9,6 +9,7 @@ export interface TaskProps {
   color: StylesTypes.Color;
   value: boolean;
   disabled?: boolean;
+  variant?: "mobile" | "desktop";
   onUpdateClick: () => void;
   onDeleteClick: () => void;
   onCheckboxClick: () => void;

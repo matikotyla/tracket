@@ -1,5 +1,5 @@
 .root {
-  @apply sm:flex sm:items-end;
+  @apply sm:flex xl:items-end flex-col xl:flex-row space-y-3 xl:space-x-0;
 }
 
 .content {
@@ -15,7 +15,7 @@
 }
 
 .menu {
-  @apply mt-4 sm:mt-0 flex space-x-3;
+  @apply mt-4 sm:mt-0 flex sm:space-x-3 flex-col sm:flex-row space-y-3 sm:space-y-0;
 }
 
 .button {
