@@ -20,7 +20,7 @@ const AppContainer: FunctionComponent = () => {
   return loading || !user ? (
     <Loader />
   ) : (
-    <div className="pt-16 md:pl-64">
+    <div className="pt-16 md:pl-64 2xl:pr-96">
       <div className="py-6 mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
         <Outlet />
       </div>

@@ -3,6 +3,7 @@ import SidebarDesktop from "./SidebarDesktop/SidebarDesktop";
 import SidebarNavigation from "./SidebarNavigation/SidebarNavigation";
 import SidebarMobile from "./SidebarMobile/SidebarMobile";
 import { useAuth } from "hooks";
+import SidebarAside from "./SidebarAside/SidebarAside";
 
 const Sidebar: FunctionComponent<PropsWithChildren> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -17,6 +18,7 @@ const Sidebar: FunctionComponent<PropsWithChildren> = ({ children }) => {
         <SidebarNavigation show={authenticated} onClick={setSidebarOpen} />
         {children}
       </div>
+      <SidebarAside show={authenticated} />
     </div>
   );
 };
