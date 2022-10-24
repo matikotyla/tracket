@@ -90,6 +90,8 @@ jobs:
 
     - name: Build  
       run: CI=false npm run build
+      env:
+        REACT_APP_URL: ${{ secrets.REACT_APP_URL }}
 
     - name: Test
       run: npm run test
