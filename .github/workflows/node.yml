@@ -93,6 +93,9 @@ jobs:
       env:
         REACT_APP_URL: ${{ secrets.REACT_APP_URL }}
 
+    - name: Copy netlify config
+      run: cp ./_redirects ./build
+
     - name: Test
       run: npm run test
 
