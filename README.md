@@ -52,6 +52,13 @@ Nexus
 JWT
 ```
 
+## Implemented functionalities
+
+This application is some sort of todo application, where you can create your own projects that contain tasks. Every project and task might be updated or deleted after its creation. Each task might be marked as done or otherwise.
+![](https://github.com/matikotyla/tracket/blob/master/images/dashboard.gif)
+
+You are also able to edit and delete particular projects and tasks. Deleting a project that contains tasks results in deleting all the tasks as well.
+
 <!-- ## Implemented functionalities
 
 Because this is a To-Do application, you can add your own projects whose store todos, here called as `tasks`.
