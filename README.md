@@ -72,6 +72,57 @@ There is also a client and server side validation, so whenever you provide inval
 | :-----------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
 | ![](https://github.com/matikotyla/tracket/blob/main/images/login.gif) | ![](https://github.com/matikotyla/tracket/blob/main/images/register.gif) |
 
+## How to start using this app?
+
+To start using this application you have to clone or download this repository using the following command
+
+```
+git clone https://github.com/matikotyla/tracket.git
+```
+
+next you have to install all required modules in the frontend and backend directories using
+
+```
+cd frontend
+npm ci
+cd backend
+npm ci
+```
+
+Once it's done you need to provide two `.env` files, in the frontned and backend directories. Place the first one in the backend directory and copy past the following content
+
+```
+NODE_ENV=development
+DATABASE_URL=<YOUR-MONGO-DB-URL>
+HEROKU_API_KEY=<HEROKU-API-KEY>
+```
+
+the `HEROKU_API_KEY` is not required as it is used only during the CI/CD process after pushing your changes to the main branch. Place the second one in the frontend directory and copy paste the following content
+
+REACT_APP_URL=http://localhost:4000/
+NETLIFY_SITE_ID=<YOUR-NETLIFY-SITE-ID>
+NETLIFY_AUTH_TOKEN=<YOUR-NETLIFY-AUTH-TOKEN>
+
+the `NETLIFY_SITE_ID` and `NETLIFY_AUTH_TOKEN` environment variables are only used during the CI/CD proces, hence they are not needed to start the application.
+
+Once all of the above is done, we need to run the frontend side as well as the backend side of the application. Do it using the following commands
+
+```
+cd frontend
+npm start
+cd backend
+npm run server
+```
+
+The first command starts the frotend part of the application, and the second one starts the backend part of the application.
+
+## Landing page
+
+The application was designed using `Figma`
+
+
+
+
 <!-- ## Implemented functionalities
 
 Because this is a To-Do application, you can add your own projects whose store todos, here called as `tasks`.
