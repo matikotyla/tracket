@@ -120,7 +120,7 @@ The first command starts the frotend part of the application, and the second one
 
 The application was designed using `Figma`
 
-
+![](https://github.com/matikotyla/tracket/blob/main/images/page.gif)
 
 
 <!-- ## Implemented functionalities
