@@ -60,6 +60,18 @@ This application is some sort of todo application, where you can create your own
 
 You are also able to edit and delete particular projects and tasks. Deleting a project that contains tasks results in deleting all the tasks as well.
 
+![](https://github.com/matikotyla/tracket/blob/main/images/task.gif)
+
+You are also able to update you profile details and add something about yourself, all the changes are immediately visible.
+
+![](https://github.com/matikotyla/tracket/blob/main/images/profile.gif)
+
+There is also a client and server side validation, so whenever you provide invalid data, you will be informed about that
+
+|                                      Login                                      |                                     Sign up                                      |
+| :-----------------------------------------------------------------------------: | :------------------------------------------------------------------------------: |
+| ![](https://github.com/matikotyla/tracket/blob/main/images/login.gif) | ![](https://github.com/matikotyla/tracket/blob/main/images/register.gif) |
+
 <!-- ## Implemented functionalities
 
 Because this is a To-Do application, you can add your own projects whose store todos, here called as `tasks`.

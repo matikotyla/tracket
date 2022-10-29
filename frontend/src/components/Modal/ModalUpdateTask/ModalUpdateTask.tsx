@@ -64,6 +64,7 @@ const ModalUpdateTask: FunctionComponent<ModalUpdateTaskProps> = ({
                 onChange={onChange}
                 valid={!errors.content}
                 error={errors.content?.message}
+                autoComplete="off"
               />
             )}
           />
@@ -83,6 +84,7 @@ const ModalUpdateTask: FunctionComponent<ModalUpdateTaskProps> = ({
                 onChange={onChange}
                 valid={!errors.description}
                 error={errors.description?.message}
+                autoComplete="off"
               />
             )}
           />
