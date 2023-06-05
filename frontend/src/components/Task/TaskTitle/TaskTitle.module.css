@@ -1,0 +1,3 @@
+.root {
+  @apply text-sm leading-5 font-medium text-gray-900;
+}

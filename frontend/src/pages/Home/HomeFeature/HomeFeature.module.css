@@ -1,0 +1,51 @@
+.root {
+  @apply bg-white;
+}
+
+.container {
+  @apply mx-auto;
+}
+
+.header {
+  @apply md:text-center;
+}
+
+.headerInfo {
+  @apply text-base text-teal-600 font-semibold tracking-wide uppercase;
+}
+
+.headerTitle {
+  @apply mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl;
+}
+
+.headerText {
+  @apply mt-4 max-w-2xl text-xl text-gray-500 md:mx-auto;
+}
+
+.content {
+  @apply mt-10;
+}
+
+.list {
+  @apply space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10;
+}
+
+.item {
+  @apply relative;
+}
+
+.itemBox {
+  @apply absolute flex items-center justify-center h-12 w-12 rounded-md bg-teal-600 text-white;
+}
+
+.itemIcon {
+  @apply h-6 w-6;
+}
+
+.itemName {
+  @apply ml-16 text-lg leading-6 font-medium text-gray-900;
+}
+
+.itemDescription {
+  @apply mt-2 ml-16 text-base text-gray-500;
+}

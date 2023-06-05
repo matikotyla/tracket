@@ -1,0 +1,7 @@
+.root {
+  @apply flex space-x-2;
+}
+
+.icon {
+  @apply w-6 h-6 text-gray-900;
+}

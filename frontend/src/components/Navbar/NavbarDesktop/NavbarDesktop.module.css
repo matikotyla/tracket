@@ -1,0 +1,7 @@
+.root {
+  @apply relative z-20 shadow;
+}
+
+.container {
+  @apply max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8 py-5 sm:py-4 md:space-x-10;
+}

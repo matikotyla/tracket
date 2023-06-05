@@ -1,0 +1,75 @@
+.root {
+  @apply bg-white;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.top {
+  @apply xl:grid xl:grid-cols-3 xl:gap-8;
+}
+
+.bottom {
+  @apply mt-8 border-t border-gray-200 py-8 md:flex md:items-center md:justify-between;
+}
+
+.left {
+  @apply xl:col-span-2;
+}
+
+.right {
+  @apply mt-8 xl:mt-0;
+}
+
+.lists {
+  @apply grid grid-cols-2 gap-y-4 md:grid-cols-4 md:gap-8;
+}
+
+.column {
+  @apply mt-12 md:mt-0;
+}
+
+.title {
+  @apply text-sm font-semibold text-gray-400 tracking-wider uppercase;
+}
+
+.text {
+  @apply mt-4 text-base text-gray-500;
+}
+
+.form {
+  @apply mt-4 sm:flex sm:max-w-md;
+}
+
+.formLabel {
+  @apply sr-only;
+}
+
+.formInput {
+  @apply appearance-none min-w-0 w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-teal-500 focus:border-teal-500 focus:placeholder-gray-400;
+}
+
+.formBox {
+  @apply mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0;
+}
+
+.formButton {
+  @apply w-full bg-teal-600 flex items-center justify-center border border-transparent rounded-md py-2 px-4 text-base font-medium text-white hover:bg-teal-700 focus:ring-2 focus:ring-offset-2 focus:ring-teal-500;
+}
+
+.links {
+  @apply flex space-x-6 md:order-2;
+}
+
+.link {
+  @apply text-gray-400 hover:text-gray-500;
+}
+
+.icon {
+  @apply h-6 w-6;
+}
+
+.info {
+  @apply mt-8 text-base text-gray-400 md:mt-0 md:order-1;
+}

@@ -1,0 +1,11 @@
+.root {
+  @apply -mr-2 -my-2 md:hidden;
+}
+
+.container {
+  @apply bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 focus:outline-none;
+}
+
+.icon {
+  @apply h-6 w-6;
+}

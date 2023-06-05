@@ -1,0 +1,43 @@
+.root {
+  @apply hidden md:fixed z-20 md:inset-y-0 md:flex md:w-64 md:flex-col;
+}
+
+.container {
+  @apply flex flex-grow flex-col overflow-y-auto border-r border-gray-200 bg-white pt-5 pb-4;
+}
+
+.content {
+  @apply mt-5 flex flex-grow flex-col;
+}
+
+.list {
+  @apply flex-1 space-y-8 bg-white px-2;
+}
+
+.item {
+  @apply flex items-center px-2 py-2 text-sm font-medium rounded-md;
+}
+
+.item:hover .itemIcon {
+  @apply text-gray-500;
+}
+
+.itemActive {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.itemActive .itemIcon {
+  @apply text-gray-500;
+}
+
+.itemInactive {
+  @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+}
+
+.itemInactive .itemIcon {
+  @apply text-gray-400;
+}
+
+.itemIcon {
+  @apply mr-3 flex-shrink-0 h-6 w-6;
+}

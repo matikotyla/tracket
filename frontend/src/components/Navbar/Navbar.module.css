@@ -1,0 +1,3 @@
+.navbar {
+  @apply absolute w-full bg-white z-10;
+}

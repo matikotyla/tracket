@@ -1,0 +1,75 @@
+.root {
+  @apply relative z-40 md:hidden;
+}
+
+.cover {
+  @apply fixed inset-0 bg-gray-600 bg-opacity-75;
+}
+
+.container {
+  @apply fixed inset-0 z-40 flex;
+}
+
+.panel {
+  @apply relative flex w-full max-w-xs flex-1 flex-col bg-white pt-5 pb-4;
+}
+
+.closeContainer {
+  @apply absolute top-0 right-0 -mr-12 pt-2;
+}
+
+.closeButton {
+  @apply ml-1 flex h-10 w-10 items-center justify-center rounded-full focus:outline-none;
+}
+
+.closeIcon {
+  @apply h-6 w-6 text-white;
+}
+
+.logoContainer {
+  @apply flex flex-shrink-0 items-center px-4;
+}
+
+.logo {
+  @apply h-8 w-auto;
+}
+
+.content {
+  @apply mt-5 h-0 flex-1 overflow-y-auto;
+}
+
+.list {
+  @apply flex-1 space-y-8 bg-white px-2;
+}
+
+.item {
+  @apply flex items-center px-2 py-2 text-base font-medium rounded-md;
+}
+
+.item:hover .itemIcon {
+  @apply text-gray-500;
+}
+
+.itemActive {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.itemActive .itemIcon {
+  @apply text-gray-500;
+}
+
+.itemInactive {
+  @apply text-gray-600 hover:bg-gray-50 hover:text-gray-900;
+}
+
+.itemInactive .itemIcon {
+  @apply text-gray-400;
+}
+
+.itemIcon {
+  @apply mr-4 flex-shrink-0 h-6 w-6;
+}
+
+.shrink {
+  @apply w-14 flex-shrink-0;
+}

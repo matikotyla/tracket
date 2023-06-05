@@ -1,0 +1,23 @@
+.root {
+  @apply space-y-6;
+}
+
+.row {
+  @apply grid grid-cols-6 gap-6;
+}
+
+.column {
+  @apply col-span-6 sm:col-span-3;
+}
+
+.text {
+  @apply text-sm text-gray-600 text-center;
+}
+
+.link {
+  @apply font-medium text-teal-600 hover:text-teal-700;
+}
+
+.error {
+  @apply text-sm text-center text-red-600;
+}

@@ -1,0 +1,39 @@
+.root {
+  @apply w-full;
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.container {
+  @apply mt-1 relative rounded-md shadow-sm;
+}
+
+.field {
+  @apply appearance-none block w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none sm:text-sm;
+}
+
+.fieldValid {
+  @apply border-gray-300 placeholder-gray-400 focus:ring-teal-500 focus:border-teal-500;
+}
+
+.fieldInvalid {
+  @apply border-red-300 text-red-900 placeholder-red-300 focus:ring-red-500 focus:border-red-500 pr-10;
+}
+
+.box {
+  @apply absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none;
+}
+
+.icon {
+  @apply h-5 w-5 text-red-500;
+}
+
+.error {
+  @apply mt-2 text-sm text-red-600;
+}
+
+.hint {
+  @apply mt-2 text-sm text-gray-500;
+}

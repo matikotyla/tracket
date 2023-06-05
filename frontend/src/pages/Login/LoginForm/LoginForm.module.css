@@ -1,0 +1,19 @@
+.root {
+  @apply space-y-6;
+}
+
+.checkbox {
+  @apply flex items-center justify-between;
+}
+
+.text {
+  @apply text-sm text-gray-600 text-center;
+}
+
+.link {
+  @apply text-sm font-medium text-teal-600 hover:text-teal-700;
+}
+
+.error {
+  @apply text-sm text-center text-red-600;
+}

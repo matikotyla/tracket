@@ -1,0 +1,7 @@
+.title {
+  @apply text-sm font-semibold text-gray-400 tracking-wider uppercase;
+}
+
+.items {
+  @apply mt-4 space-y-4;
+}

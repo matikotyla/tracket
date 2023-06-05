@@ -1,0 +1,7 @@
+.root {
+  @apply hidden md:flex-1 md:flex md:items-center md:justify-between md:space-x-12;
+}
+
+.list {
+  @apply flex items-center space-x-8 lg:space-x-10;
+}
